@@ -2,11 +2,12 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = {
     'bashls',
+    'html',
     'jdtls',
+    'lua_ls',
     'marksman',
     'pylsp',
     'rust_analyzer',
-    'sumneko_lua',
     'tsserver',
   },
 })
@@ -24,30 +25,41 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspconfig').bashls.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+require('lspconfig').html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 require('lspconfig').jdtls.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+require('lspconfig').lua_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 require('lspconfig').marksman.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 require('lspconfig').pylsp.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 require('lspconfig').rust_analyzer.setup {
-  on_attach = on_attach
-}
-
-require('lspconfig').sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
 
 require('lspconfig').tsserver.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities,
 }

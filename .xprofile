@@ -27,7 +27,7 @@ nitrogen --restore
 # Starts the services belonging to autostart.target, which start startup
 # applications in the background at Xorg startup.
 #------------------------------------------------------------------------------
-systemctl --user start autostart.target
+systemctl --user restart autostart.target
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------

@@ -1,0 +1,10 @@
+[Unit]
+Description=Picom Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/picom --unredir-if-possible
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target

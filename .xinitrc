@@ -49,6 +49,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 
+
 ###############################################################################
 # LISTA DE COMANDOS PARA ARRANQUE DE XORG CON STARTX.
 ###############################################################################
@@ -78,7 +79,7 @@ nitrogen --restore
 # Starts the services belonging to autostart.target, which start startup
 # applications in the background at Xorg startup using startx.
 #------------------------------------------------------------------------------
-systemctl --user start autostart.target
+systemctl --user restart autostart.target
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------

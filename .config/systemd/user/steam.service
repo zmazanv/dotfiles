@@ -1,0 +1,10 @@
+[Unit]
+Description=Steam Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/steam-runtime -silent
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target

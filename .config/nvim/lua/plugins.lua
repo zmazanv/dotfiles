@@ -62,9 +62,8 @@ return require('packer').startup(function(use)
   -- Temas de Color
   -- Colorschemes
   use { 'catppuccin/nvim', as = 'catppuccin' }
-  use 'marko-cerovac/material.nvim'
   use { 'embark-theme/vim', as = 'embark' }
-  use 'whatyouhide/vim-gotham'
+  use 'folke/tokyonight.nvim'
 
   -- Misceláneo
   -- Miscellaneous

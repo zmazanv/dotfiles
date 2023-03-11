@@ -1,0 +1,10 @@
+[Unit]
+Description=Polkit-Dumb-Agent Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/polkit-dumb-agent
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target

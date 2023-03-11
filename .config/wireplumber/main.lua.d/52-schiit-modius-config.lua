@@ -1,7 +1,7 @@
 rule = {
   matches = {
     {
-      -- Se identificará el nódulo del salida de audio del DAC Schiit Modius emparejando su nombre de nódulo.
+      -- Se identificará el nódulo de la salida de audio del DAC Schiit Modius emparejando su nombre de nódulo.
       -- The Schiit Modius DAC audio sink node will be identified by matching its node name.
       { 'node.name', 'equals', 'alsa_output.usb-Schiit_Audio_Schiit_Unison_Modius-00.analog-stereo' },
     },
