@@ -6,3 +6,16 @@ x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
 image/png=nsxiv.desktop
 image/jpeg=nsxiv.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-OWFE11.desktop
+message/rfc822=userapp-Thunderbird-OWFE11.desktop
+x-scheme-handler/mid=userapp-Thunderbird-OWFE11.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-JW3E11.desktop
+text/calendar=userapp-Thunderbird-JW3E11.desktop
+application/x-extension-ics=userapp-Thunderbird-JW3E11.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-JW3E11.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-OWFE11.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-OWFE11.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-JW3E11.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-JW3E11.desktop;
