@@ -122,20 +122,26 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 #widget.TextBox("default config", name="default"),
-                widget.TextBox("[sebas@obsidiana]", foreground="#b6a0ff"),
-                #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # Duotone Dark
+                # widget.TextBox("[sebas@obsidiana]", foreground="#b6a0ff"),
+                # Tokyo Night Moon
+                widget.TextBox("[sebas@obsidiana]", foreground="#ffc777"),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 #widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.Clock(format="%A, %d/%m/%Y [%H:%M:%S]"),
-                #widget.QuickExit(),
+                # widget.QuickExit(),
             ],
             24,
             # 39,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            background='#100e23',
+            # Duotone Dark
+            # background='#100e23',
+            # Tokyo Night Dark
+            background='#1b1d2b',
         ),
     ),
     Screen(
@@ -153,27 +159,35 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 #widget.TextBox("default config", name="default"),
-                widget.TextBox("[sebas@obsidiana]", foreground="#b6a0ff"),
-                #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # Duotone Dark
+                # widget.TextBox("[sebas@obsidiana]", foreground="#b6a0ff"),
+                # Tokyo Night Moon
+                widget.TextBox("[sebas@obsidiana]", foreground="#1b1d2b"),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                #widget.Systray(),
+                # widget.Systray(),
                 #widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.Clock(format="%A, %d/%m/%Y [%H:%M:%S]"),
-                #widget.QuickExit(),
+                # widget.QuickExit(),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            background='#100e23',
+            # Duotone Dark
+            # background='#100e23',
+            # Tokyo Night Dark
+            background='#1b1d2b',
         ),
     ),
 ]
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -200,7 +214,7 @@ focus_on_window_activation = "smart"
 reconfigure_screens = True
 
 #groups = workspaces.groups
-#groups.append(ScratchPad('scratchpad', [
+# groups.append(ScratchPad('scratchpad', [
 #    DropDown(
 #        'terminal_scratchpad',
 #        applications.terminal,
@@ -209,15 +223,15 @@ reconfigure_screens = True
 #        x=0.3,
 #        y=0.2,
 #        opacity=1),
-#]))
+# ]))
 #
-#keys.extend([
+# keys.extend([
 #    Key(
 #        [mod],
 #        'backspace',
 #        lazy.group['scratchpad'].dropdown_toggle('terminal_scratchpad')
 #    ),
-#])
+# ])
 
 # If things like steam games want to auto-minimize themselves when losing
 # focus, should we respect this or not?
