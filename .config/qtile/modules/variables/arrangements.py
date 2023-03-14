@@ -18,13 +18,13 @@ from libqtile import layout
 # THEME
 ###############################################################################
 # Duotone Dark
-layout_theme = dict(
-    # border_width=4,
-    # border_focus='#d4bfff',
-    # border_normal='#2d2b40',
-    # border_focus_stack='#a1efd3',
-    # border_normal_stack='#65b2ff',
-)
+# layout_theme = dict(
+#     border_width=4,
+#     border_focus='#d4bfff',
+#     border_normal='#2d2b40',
+#     border_focus_stack='#a1efd3',
+#     border_normal_stack='#65b2ff',
+# )
 # Tokyo Night Moon
 layout_theme = dict(
     border_width=4,
