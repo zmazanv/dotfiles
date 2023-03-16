@@ -60,8 +60,8 @@ keys = [
     Key(
         [],
         'XF86AudioLowerVolume',
-        # lazy.spawn('pulsemixer --change-volume -1'),
-        lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -1%'),
+        # lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -1%'),
+        lazy.spawn('pulsemixer --change-volume -1'),
         desc='Lower default audio sink volume by 1%',
     ),
 
@@ -69,8 +69,8 @@ keys = [
     # Key(
     #     [mod],
     #     'comma',
-    #     # lazy.spawn('pulsemixer --change-volume -1'),
-    #     lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -1%'),
+    #     # lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ -1%'),
+    #     lazy.spawn('pulsemixer --change-volume -1'),
     #     desc='Lower default audio sink volume by 1%',
     # ),
     # -------------------------------------------------------------------------
@@ -84,8 +84,8 @@ keys = [
     Key(
         [],
         'XF86AudioRaiseVolume',
-        # lazy.spawn('pulsemixer --change-volume +1'),
-        lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +1%'),
+        # lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +1%'),
+        lazy.spawn('pulsemixer --change-volume +1'),
         desc='Raise default audio sink volume by 1%',
     ),
 
@@ -93,8 +93,8 @@ keys = [
     # Key(
     #     [mod],
     #     'period',
-    #     # lazy.spawn('pulsemixer --change-volume +1'),
-    #     lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +1%'),
+    #     # lazy.spawn('pactl set-sink-volume @DEFAULT_SINK@ +1%'),
+    #     lazy.spawn('pulsemixer --change-volume +1'),
     #     desc='Raise default audio sink volume by 1%',
     # ),
     # -------------------------------------------------------------------------
