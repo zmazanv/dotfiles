@@ -1,7 +1,7 @@
 -- Temas de Color/Colorschemes
-require('plugin_config.catppuccin')
+--require('plugin_config.catppuccin')
 --require('plugin_config.embark')
---require('plugin_config.tokyonight')
+require('plugin_config.tokyonight')
 
 require('plugin_config.completions')
 require('plugin_config.lsp_config')
