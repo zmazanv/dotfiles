@@ -9,10 +9,10 @@ rule = {
   apply_properties = {
     -- Se cambiará el valor de prioridad de controlador del nódulo a 1000.
     -- The value of the priority driver of the node will be changed to 1000.
-    ['priority.driver'] = 1000,
+    ['priority.driver'] = 1100,
     -- Se cambiará el valor de prioridad de sesión del nódulo a 1000.
     -- The value of the priority session of the node will be changed to 1000.
-    ['priority.session'] = 1000,
+    ['priority.session'] = 1100,
     -- Se cambiará el formato de audio del nódulo a 32-bit little-endian integer.
     -- The audio format of the node will be changed to 32-bit little-endian integer.
     ['audio.format'] = 'S32LE',
