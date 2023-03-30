@@ -13,9 +13,15 @@ x-scheme-handler/webcal=userapp-Thunderbird-JW3E11.desktop
 text/calendar=userapp-Thunderbird-JW3E11.desktop
 application/x-extension-ics=userapp-Thunderbird-JW3E11.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-JW3E11.desktop
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+text/markdown=nvim.desktop
+text/plain=nvim.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-OWFE11.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-OWFE11.desktop;
 x-scheme-handler/webcal=userapp-Thunderbird-JW3E11.desktop;
 x-scheme-handler/webcals=userapp-Thunderbird-JW3E11.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+text/markdown=nvim.desktop;
+text/plain=nvim.desktop;
