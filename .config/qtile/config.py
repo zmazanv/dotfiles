@@ -51,14 +51,14 @@ from modules.variables import arrangements, keybinds
 groups = workspaces.groups
 
 keys = (
-    applications.keys +
-    audio.keys +
-    brightness.keys +
-    capture.keys +
-    management.keys +
-    widgets.keys +
-    windows.keys +
-    workspaces.keys
+    applications.keys
+    + audio.keys
+    + brightness.keys
+    + capture.keys
+    + management.keys
+    + widgets.keys
+    + windows.keys
+    + workspaces.ke
 )
 
 widget_defaults = arrangements.widget_defaults
