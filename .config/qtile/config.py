@@ -58,7 +58,7 @@ keys = (
     + management.keys
     + widgets.keys
     + windows.keys
-    + workspaces.ke
+    + workspaces.keys
 )
 
 widget_defaults = arrangements.widget_defaults
