@@ -40,11 +40,16 @@ from libqtile import widget
 #     update_interval=1,
 # ),
 # widget.OpenWeather(),
+# widget.PulseVolume(
+#     foreground='#85e1fc',
+#     fmt='[  Volumen: {} ]',
+#     update_interval=0.1,
+# ),
 
 
 widgets_with_systray = [
      widget.CurrentLayout(
-         foreground='#ffc777',
+         foreground='#85e1fc',
      ),
      widget.CurrentLayoutIcon(),
      widget.GroupBox(
@@ -74,7 +79,7 @@ widgets_with_systray = [
      widget.TaskList(
          border='#82aaff',
          borderwidth=2,
-         foreground='#c8d3f5',
+         foreground='#ffc777',
          highlight_method='border',
          txt_floating='🗗 ',
          txt_maximized='🗖 ',
@@ -91,15 +96,10 @@ widgets_with_systray = [
          use_bits=True,
          update_interval=1,
      ),
-     widget.PulseVolume(
-         foreground='#85e1fc',
-         fmt='[  Volumen: {} ]',
-         update_interval=0.1,
-     ),
      # NB Systray is incompatible with Wayland, consider using StatusNotifier
      # widget.StatusNotifier(),
      widget.Clock(
-         foreground='#ff966c',
+         foreground='#ff9e64',
          format='[ 󰃭 %A, %d/%m/%Y; 󰅐 %H:%M:%S ]',
          update_interval=1,
      ),
@@ -108,7 +108,7 @@ widgets_with_systray = [
 
 widgets = [
      widget.CurrentLayout(
-         foreground='#ffc777',
+         foreground='#85e1fc',
      ),
      widget.CurrentLayoutIcon(),
      widget.GroupBox(
@@ -128,7 +128,7 @@ widgets = [
      ),
      widget.Prompt(
          cursor=True,
-         cursor_color='#ff757f',
+         cursor_color='#c3e88d',
          cursorblink=0.5,
          foreground='#c3e88d',
          ignore_dups_history=False,
@@ -138,7 +138,7 @@ widgets = [
      widget.TaskList(
          border='#82aaff',
          borderwidth=2,
-         foreground='#c8d3f5',
+         foreground='#ffc777',
          highlight_method='border',
          txt_floating='🗗 ',
          txt_maximized='🗖 ',
@@ -152,15 +152,10 @@ widgets = [
          use_bits=True,
          update_interval=1,
      ),
-     widget.PulseVolume(
-         foreground='#85e1fc',
-         fmt='[  Volumen: {} ]',
-         update_interval=0.1,
-     ),
      # NB Systray is incompatible with Wayland, consider using StatusNotifier
      # widget.StatusNotifier(),
      widget.Clock(
-         foreground='#ff966c',
+         foreground='#ff9e64',
          format='[ 󰃭 %A, %d/%m/%Y; 󰅐 %H:%M:%S ]',
          update_interval=1,
      ),
