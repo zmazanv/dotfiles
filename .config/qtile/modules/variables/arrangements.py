@@ -136,6 +136,8 @@ screens = [
                     txt_floating='🗗 ',
                     txt_maximized='🗖 ',
                     txt_minimized='🗕 ',
+                    urgent_alert_method='border',
+                    urgent_border='#c53b53',
                 ),
                 #widget.Chord(
                 #    chords_colors={
@@ -213,6 +215,8 @@ screens = [
                     txt_floating='🗗 ',
                     txt_maximized='🗖 ',
                     txt_minimized='🗕 ',
+                    urgent_alert_method='border',
+                    urgent_border='#c53b53',
                 ),
                 #widget.Chord(
                 #    chords_colors={
