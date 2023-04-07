@@ -149,16 +149,16 @@ screens = [
                     fmt='[Volumen: {}]',
                     update_interval=0.1,
                 ),
-                widget.KeyboardLayout(
-                    configured_keyboards=['latam', 'us'],
-                    display_map={
-                        'latam': 'Latinoamérica',
-                        'us': 'U.S.',
-                    },
-                    fmt='[Distribución: {}]',
-                    # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
-                    update_interval=1,
-                ),
+                # widget.KeyboardLayout(
+                #     configured_keyboards=['latam', 'us'],
+                #     display_map={
+                #         'latam': 'Latinoamérica',
+                #         'us': 'U.S.',
+                #     },
+                #     fmt='[Distribución: {}]',
+                #     # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
+                #     update_interval=1,
+                # ),
                 # widget.CapsNumLockIndicator(
                 #     update_interval=0.1,
                 # ),
@@ -231,16 +231,16 @@ screens = [
                     fmt='[Volumen: {}]',
                     update_interval=0.1,
                 ),
-                widget.KeyboardLayout(
-                    configured_keyboards=['latam', 'us'],
-                    display_map={
-                        'latam': 'Latinoamérica',
-                        'us': 'U.S.',
-                    },
-                    fmt='[Distribución: {}]',
-                    # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
-                    update_interval=1,
-                ),
+                # widget.KeyboardLayout(
+                #     configured_keyboards=['latam', 'us'],
+                #     display_map={
+                #         'latam': 'Latinoamérica',
+                #         'us': 'U.S.',
+                #     },
+                #     fmt='[Distribución: {}]',
+                #     # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
+                #     update_interval=1,
+                # ),
                 # widget.CapsNumLockIndicator(
                 #     update_interval=0.1,
                 # ),
