@@ -49,6 +49,7 @@ from libqtile import widget
 
 widgets_with_systray = [
      widget.CurrentLayout(
+         fmt='[{}]',
          foreground='#85e1fc',
      ),
      widget.CurrentLayoutIcon(),
@@ -108,6 +109,7 @@ widgets_with_systray = [
 
 widgets = [
      widget.CurrentLayout(
+         fmt='[{}]',
          foreground='#85e1fc',
      ),
      widget.CurrentLayoutIcon(),
