@@ -64,7 +64,7 @@ widgets_with_systray = [
      ),
      widget.Prompt(
          cursor=True,
-         cursor_color='#ff757f',
+         cursor_color='#c3e88d',
          cursorblink=0.5,
          foreground='#c3e88d',
          ignore_dups_history=False,
