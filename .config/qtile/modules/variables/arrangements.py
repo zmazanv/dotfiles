@@ -8,7 +8,8 @@
 
 # Variables for Qtile arrangements.
 ###############################################################################
-from libqtile import layout
+from libqtile import bar, layout, widget
+from libqtile.config import Screen
 ###############################################################################
 
 
@@ -79,4 +80,179 @@ widget_defaults = dict(
 # EXTENSIONS
 ###############################################################################
 extension_defaults = widget_defaults.copy()
+###############################################################################
+
+
+###############################################################################
+# PANTALLAS
+###############################################################################
+# SCREENS
+###############################################################################
+# widget.Battery(
+#     charge_char='^',
+#     discharge_char='V',
+#     empty_char='x',
+#     full_char='=',
+#     unknown_char='?',
+#     update_interval=1,
+# ),
+# widget.BatteryIcon(
+#     update_interval=1,
+# ),
+# widget.OpenWeather(),
+
+
+screens = [
+    Screen(
+        bottom=bar.Bar(
+            [
+                widget.CurrentLayout(),
+                widget.CurrentLayoutIcon(),
+                widget.GroupBox(
+                    active='#c8d3f5',
+                    center_aligned=True,
+                    disable_drag=False,
+                    highlight_method='border',
+                    inactive='#444a73',
+                    margin=3,
+                    other_current_screen_border='#c8d3f5',
+                    other_screen_border='#828bb8',
+                    rounded=True,
+                    this_current_screen_border='#4fd6be',
+                    this_screen_border='#3654a7',
+                    urgent_border='#c53b53',
+                    urgent_text='#fca7ea',
+                ),
+                widget.Prompt(
+                    ignore_dups_history=False,
+                    max_history=100,
+                    record_history=True,
+                ),
+                # widget.WindowName(),
+                widget.TaskList(
+                    border='#82aaff',
+                    borderwidth=2,
+                    highlight_method='border',
+                    txt_floating='🗗 ',
+                    txt_maximized='🗖 ',
+                    txt_minimized='🗕 ',
+                ),
+                #widget.Chord(
+                #    chords_colors={
+                #        'launch': ('#ff0000', '#ffffff'),
+                #    },
+                #    name_transform=lambda name: name.upper(),
+                #),
+                widget.PulseVolume(
+                    update_interval=0.1,
+                ),
+                widget.KeyboardLayout(
+                    configured_keyboards=['latam', 'us'],
+                    display_map={
+                        'latam': 'Latinoamérica',
+                        'us': 'U.S.',
+                    },
+                    # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
+                    update_interval=1,
+                ),
+                widget.CapsNumLockIndicator(
+                    update_interval=0.1,
+                ),
+                widget.Wlan(
+                    disconnected_message='Desconectado',
+                    interface='wlp5s0',
+                ),
+                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
+                # widget.StatusNotifier(),
+                widget.Systray(
+                    rounded=True,
+                ),
+                widget.Clock(
+                    format='%A, %d/%m/%Y [%H:%M:%S]',
+                    update_interval=1,
+                ),
+                #widget.QuickExit(),
+            ],
+            24,
+            # 39,
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=['ff00ff', '000000', 'ff00ff', '000000']  # Borders are magenta
+            background='#1b2838',
+        ),
+    ),
+    Screen(
+        bottom=bar.Bar(
+            [
+                widget.CurrentLayout(),
+                widget.CurrentLayoutIcon(),
+                widget.GroupBox(
+                    active='#c8d3f5',
+                    center_aligned=True,
+                    disable_drag=False,
+                    highlight_method='border',
+                    inactive='#444a73',
+                    margin=3,
+                    other_current_screen_border='#c8d3f5',
+                    other_screen_border='#828bb8',
+                    rounded=True,
+                    this_current_screen_border='#4fd6be',
+                    this_screen_border='#3654a7',
+                    urgent_border='#c53b53',
+                    urgent_text='#fca7ea',
+                ),
+                widget.Prompt(
+                    ignore_dups_history=False,
+                    max_history=100,
+                    record_history=True,
+                ),
+                # widget.WindowName(),
+                widget.TaskList(
+                    border='#82aaff',
+                    borderwidth=2,
+                    highlight_method='border',
+                    txt_floating='🗗 ',
+                    txt_maximized='🗖 ',
+                    txt_minimized='🗕 ',
+                ),
+                #widget.Chord(
+                #    chords_colors={
+                #        'launch': ('#ff0000', '#ffffff'),
+                #    },
+                #    name_transform=lambda name: name.upper(),
+                #),
+                widget.PulseVolume(
+                    update_interval=0.1,
+                ),
+                widget.KeyboardLayout(
+                    configured_keyboards=['latam', 'us'],
+                    display_map={
+                        'latam': 'Latinoamérica',
+                        'us': 'U.S.',
+                    },
+                    # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
+                    update_interval=1,
+                ),
+                widget.CapsNumLockIndicator(
+                    update_interval=0.1,
+                ),
+                widget.Wlan(
+                    disconnected_message='Desconectado',
+                    interface='wlp5s0',
+                ),
+                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
+                # widget.StatusNotifier(),
+                widget.Clock(
+                    format='%A, %d/%m/%Y [%H:%M:%S]',
+                    update_interval=1,
+                ),
+                #widget.QuickExit(),
+            ],
+            24,
+            # 39,
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=['ff00ff', '000000', 'ff00ff', '000000']  # Borders are magenta
+            background='#1b2838',
+        ),
+    ),
+]
 ###############################################################################

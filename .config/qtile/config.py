@@ -50,6 +50,7 @@ from modules.variables import arrangements, keybinds
 ###############################################################################
 groups = workspaces.groups
 
+mod = keybinds.mod
 keys = (
     applications.keys
     + audio.keys
@@ -65,8 +66,7 @@ widget_defaults = arrangements.widget_defaults
 extension_defaults = arrangements.extension_defaults
 layout_theme = arrangements.layout_theme
 layouts = arrangements.layouts
-
-mod = keybinds.mod
+screens = arrangements.screens
 ###############################################################################
 
 
@@ -106,81 +106,6 @@ mod = keybinds.mod
 #  )
 # extension_defaults = widget_defaults.copy()
 
-screens = [
-    Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.CurrentLayoutIcon(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                #widget.TextBox("default config", name="default"),
-                # Duotone Dark
-                # widget.TextBox("[sebas@obsidiana]", foreground="#b6a0ff"),
-                # Tokyo Night Moon
-                widget.TextBox("[sebas@obsidiana]", foreground="#ffc777"),
-                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                #widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.Clock(format="%A, %d/%m/%Y [%H:%M:%S]"),
-                # widget.QuickExit(),
-            ],
-            24,
-            # 39,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            # Duotone Dark
-            # background='#100e23',
-            # Tokyo Night Dark
-            background='#1b1d2b',
-        ),
-    ),
-    Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.CurrentLayoutIcon(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                #widget.TextBox("default config", name="default"),
-                # Duotone Dark
-                # widget.TextBox("[sebas@obsidiana]", foreground="#b6a0ff"),
-                # Tokyo Night Moon
-                widget.TextBox("[sebas@obsidiana]", foreground="#1b1d2b"),
-                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                # widget.Systray(),
-                #widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.Clock(format="%A, %d/%m/%Y [%H:%M:%S]"),
-                # widget.QuickExit(),
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-            # Duotone Dark
-            # background='#100e23',
-            # Tokyo Night Dark
-            background='#1b1d2b',
-        ),
-    ),
-]
 
 # Drag floating layouts.
 mouse = [
