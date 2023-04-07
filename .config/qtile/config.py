@@ -40,8 +40,8 @@ from modules.keybinds import (
     windows,
     workspaces,
 )
-# ./modules/variables/
-from modules.variables import arrangements, keybinds
+# ./modules/definitions/
+from modules.definitions import arrangements, keybinds
 # A list of available commands that can be bound to keys can be found
 # at https://docs.qtile.org/en/latest/manual/config/lazy.html
 

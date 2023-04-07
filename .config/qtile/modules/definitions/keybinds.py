@@ -1,12 +1,12 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###############################################################################
-# ~/.config/qtile/modules/variables/keybinds.py
+# ~/.config/qtile/modules/definitions/keybinds.py
 
-# Variables de teclas de Qtile.
+# Definiciones de teclas de Qtile.
 ###############################################################################
-# ~/.config/qtile/modules/variables/keybinds.py
+# ~/.config/qtile/modules/definitions/keybinds.py
 
-# Variables for Qtile keys.
+# Definitions for Qtile keys.
 ###############################################################################
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 

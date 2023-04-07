@@ -1,12 +1,12 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###############################################################################
-# ~/.config/qtile/modules/variables/applications.py
+# ~/.config/qtile/modules/definitions/applications.py
 
-# Variables de aplicaciones para Qtile.
+# Definiciones de aplicaciones para Qtile.
 ###############################################################################
-# ~/.config/qtile/modules/variables/applications.py
+# ~/.config/qtile/modules/definitions/applications.py
 
-# Variables for applications for Qtile.
+# Definitions for applications for Qtile.
 ###############################################################################
 from libqtile.utils import guess_terminal
 ###############################################################################

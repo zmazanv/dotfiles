@@ -17,14 +17,14 @@ from libqtile.config import (
 from libqtile.lazy import (
     lazy,
 )
-# ../variables/applications.py
-from ..variables.applications import (
+# ../definitions/applications.py
+from ..definitions.applications import (
     browser,
     gui_file_manager,
     terminal_emulator,
 )
-# ../variables/keybinds.py
-from ..variables.keybinds import (
+# ../definitions/keybinds.py
+from ..definitions.keybinds import (
     mod,
 )
 ###############################################################################

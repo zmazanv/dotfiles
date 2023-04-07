@@ -10,8 +10,8 @@
 ###############################################################################
 from libqtile.config import Key
 from libqtile.lazy import lazy
-# ../variables/keybinds.py
-from ..variables.keybinds import mod
+# ../definitions/keybinds.py
+from ..definitions.keybinds import mod
 ###############################################################################
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
