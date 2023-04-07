@@ -162,9 +162,10 @@ screens = [
                 # widget.CapsNumLockIndicator(
                 #     update_interval=0.1,
                 # ),
-                widget.Wlan(
-                    disconnected_message='Desconectado',
-                    interface='wlp5s0',
+                widget.Net(
+                    format='[{down} ↓↑ {up}]',
+                    use_bits=True,
+                    update_interval=1,
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
@@ -243,9 +244,10 @@ screens = [
                 # widget.CapsNumLockIndicator(
                 #     update_interval=0.1,
                 # ),
-                widget.Wlan(
-                    disconnected_message='Desconectado',
-                    interface='wlp5s0',
+                widget.Net(
+                    format='[{down} ↓↑ {up}]',
+                    use_bits=True,
+                    update_interval=1,
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
