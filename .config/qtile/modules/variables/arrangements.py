@@ -146,6 +146,7 @@ screens = [
                 #    name_transform=lambda name: name.upper(),
                 #),
                 widget.PulseVolume(
+                    fmt='[Volumen: {}]',
                     update_interval=0.1,
                 ),
                 widget.KeyboardLayout(
@@ -154,12 +155,13 @@ screens = [
                         'latam': 'Latinoamérica',
                         'us': 'U.S.',
                     },
+                    fmt='[Distribución: {}]',
                     # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
                     update_interval=1,
                 ),
-                widget.CapsNumLockIndicator(
-                    update_interval=0.1,
-                ),
+                # widget.CapsNumLockIndicator(
+                #     update_interval=0.1,
+                # ),
                 widget.Wlan(
                     disconnected_message='Desconectado',
                     interface='wlp5s0',
@@ -170,7 +172,7 @@ screens = [
                     rounded=True,
                 ),
                 widget.Clock(
-                    format='[%A, %d/%m/%Y] [%H:%M:%S]',
+                    format='[%A, %d/%m/%Y, %H:%M:%S]',
                     update_interval=1,
                 ),
                 #widget.QuickExit(),
@@ -225,6 +227,7 @@ screens = [
                 #    name_transform=lambda name: name.upper(),
                 #),
                 widget.PulseVolume(
+                    fmt='[Volumen: {}]',
                     update_interval=0.1,
                 ),
                 widget.KeyboardLayout(
@@ -233,12 +236,13 @@ screens = [
                         'latam': 'Latinoamérica',
                         'us': 'U.S.',
                     },
+                    fmt='[Distribución: {}]',
                     # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
                     update_interval=1,
                 ),
-                widget.CapsNumLockIndicator(
-                    update_interval=0.1,
-                ),
+                # widget.CapsNumLockIndicator(
+                #     update_interval=0.1,
+                # ),
                 widget.Wlan(
                     disconnected_message='Desconectado',
                     interface='wlp5s0',
@@ -246,7 +250,7 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Clock(
-                    format='[%A, %d/%m/%Y] [%H:%M:%S]',
+                    format='[%A, %d/%m/%Y, %H:%M:%S]',
                     update_interval=1,
                 ),
                 #widget.QuickExit(),
