@@ -168,7 +168,7 @@ screens = [
                     rounded=True,
                 ),
                 widget.Clock(
-                    format='%A, %d/%m/%Y [%H:%M:%S]',
+                    format='[%A, %d/%m/%Y] [%H:%M:%S]',
                     update_interval=1,
                 ),
                 #widget.QuickExit(),
@@ -242,7 +242,7 @@ screens = [
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Clock(
-                    format='%A, %d/%m/%Y [%H:%M:%S]',
+                    format='[%A, %d/%m/%Y] [%H:%M:%S]',
                     update_interval=1,
                 ),
                 #widget.QuickExit(),
