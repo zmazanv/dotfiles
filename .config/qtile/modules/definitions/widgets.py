@@ -87,20 +87,20 @@ widgets_with_systray = [
      ),
      widget.Net(
          foreground='#bb9af7',
-         format='[ 󰀂 {down} ↓↑ {up}]',
+         format='[ 󰀂 {down} ↓↑ {up} ]',
          use_bits=True,
          update_interval=1,
      ),
      widget.PulseVolume(
          foreground='#85e1fc',
-         fmt='[  Volumen: {}]',
+         fmt='[  Volumen: {} ]',
          update_interval=0.1,
      ),
      # NB Systray is incompatible with Wayland, consider using StatusNotifier
      # widget.StatusNotifier(),
      widget.Clock(
          foreground='#ff966c',
-         format='[ 󰃭 %A, %d/%m/%Y; 󰅐 %H:%M:%S]',
+         format='[ 󰃭 %A, %d/%m/%Y; 󰅐 %H:%M:%S ]',
          update_interval=1,
      ),
 ]
@@ -148,20 +148,20 @@ widgets = [
      ),
      widget.Net(
          foreground='#bb9af7',
-         format='[ 󰀂 {down} ↓↑ {up}]',
+         format='[ 󰀂 {down} ↓↑ {up} ]',
          use_bits=True,
          update_interval=1,
      ),
      widget.PulseVolume(
          foreground='#85e1fc',
-         fmt='[  Volumen: {}]',
+         fmt='[  Volumen: {} ]',
          update_interval=0.1,
      ),
      # NB Systray is incompatible with Wayland, consider using StatusNotifier
      # widget.StatusNotifier(),
      widget.Clock(
          foreground='#ff966c',
-         format='[ 󰃭 %A, %d/%m/%Y; 󰅐 %H:%M:%S]',
+         format='[ 󰃭 %A, %d/%m/%Y; 󰅐 %H:%M:%S ]',
          update_interval=1,
      ),
 ]
