@@ -99,6 +99,19 @@ extension_defaults = widget_defaults.copy()
 # widget.BatteryIcon(
 #     update_interval=1,
 # ),
+# widget.CapsNumLockIndicator(
+#     update_interval=0.1,
+# ),
+# widget.KeyboardLayout(
+#     configured_keyboards=['latam', 'us'],
+#     display_map={
+#         'latam': 'Latinoamérica',
+#         'us': 'U.S.',
+#     },
+#     fmt='[Distribución: {}]',
+#     # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
+#     update_interval=1,
+# ),
 # widget.OpenWeather(),
 
 
@@ -106,7 +119,9 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.CurrentLayout(),
+                widget.CurrentLayout(
+                    foreground='#ffc777',
+                ),
                 widget.CurrentLayoutIcon(),
                 widget.GroupBox(
                     active='#c8d3f5',
@@ -124,14 +139,18 @@ screens = [
                     urgent_text='#fca7ea',
                 ),
                 widget.Prompt(
+                    cursor=True,
+                    cursor_color='#ff757f',
+                    cursorblink=0.5,
+                    foreground='#c3e88d',
                     ignore_dups_history=False,
                     max_history=100,
                     record_history=True,
                 ),
-                # widget.WindowName(),
                 widget.TaskList(
                     border='#82aaff',
                     borderwidth=2,
+                    foreground='#c8d3f5',
                     highlight_method='border',
                     txt_floating='🗗 ',
                     txt_maximized='🗖 ',
@@ -139,56 +158,39 @@ screens = [
                     urgent_alert_method='border',
                     urgent_border='#c53b53',
                 ),
-                #widget.Chord(
-                #    chords_colors={
-                #        'launch': ('#ff0000', '#ffffff'),
-                #    },
-                #    name_transform=lambda name: name.upper(),
-                #),
-                widget.PulseVolume(
-                    fmt='[Volumen: {}]',
-                    update_interval=0.1,
-                ),
-                # widget.KeyboardLayout(
-                #     configured_keyboards=['latam', 'us'],
-                #     display_map={
-                #         'latam': 'Latinoamérica',
-                #         'us': 'U.S.',
-                #     },
-                #     fmt='[Distribución: {}]',
-                #     # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
-                #     update_interval=1,
-                # ),
-                # widget.CapsNumLockIndicator(
-                #     update_interval=0.1,
-                # ),
-                widget.Net(
-                    format='[{down} ↓↑ {up}]',
-                    use_bits=True,
-                    update_interval=1,
-                ),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
                 widget.Systray(
                     rounded=True,
                 ),
-                widget.Clock(
-                    format='[%A, %d/%m/%Y, %H:%M:%S]',
+                widget.Net(
+                    foreground='#bb9af7',
+                    format='[ 󰀂 {down} ↓↑ {up}]',
+                    use_bits=True,
                     update_interval=1,
                 ),
-                #widget.QuickExit(),
+                widget.PulseVolume(
+                    foreground='#85e1fc',
+                    fmt='[  Volumen: {}]',
+                    update_interval=0.1,
+                ),
+                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
+                # widget.StatusNotifier(),
+                widget.Clock(
+                    foreground='#ff966c',
+                    format='[ 󰃭 %A, %d/%m/%Y; 󰅐 %H:%M:%S]',
+                    update_interval=1,
+                ),
             ],
             24,
             # 39,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=['ff00ff', '000000', 'ff00ff', '000000']  # Borders are magenta
             background='#1b2838',
         ),
     ),
     Screen(
         bottom=bar.Bar(
             [
-                widget.CurrentLayout(),
+                widget.CurrentLayout(
+                    foreground='#ffc777',
+                ),
                 widget.CurrentLayoutIcon(),
                 widget.GroupBox(
                     active='#c8d3f5',
@@ -205,15 +207,10 @@ screens = [
                     urgent_border='#c53b53',
                     urgent_text='#fca7ea',
                 ),
-                widget.Prompt(
-                    ignore_dups_history=False,
-                    max_history=100,
-                    record_history=True,
-                ),
-                # widget.WindowName(),
                 widget.TaskList(
                     border='#82aaff',
                     borderwidth=2,
+                    foreground='#c8d3f5',
                     highlight_method='border',
                     txt_floating='🗗 ',
                     txt_maximized='🗖 ',
@@ -221,46 +218,27 @@ screens = [
                     urgent_alert_method='border',
                     urgent_border='#c53b53',
                 ),
-                #widget.Chord(
-                #    chords_colors={
-                #        'launch': ('#ff0000', '#ffffff'),
-                #    },
-                #    name_transform=lambda name: name.upper(),
-                #),
-                widget.PulseVolume(
-                    fmt='[Volumen: {}]',
-                    update_interval=0.1,
-                ),
-                # widget.KeyboardLayout(
-                #     configured_keyboards=['latam', 'us'],
-                #     display_map={
-                #         'latam': 'Latinoamérica',
-                #         'us': 'U.S.',
-                #     },
-                #     fmt='[Distribución: {}]',
-                #     # option='grp:shifts_toggle,ctrl:swap_lwin_lctl,caps:swapescape',
-                #     update_interval=1,
-                # ),
-                # widget.CapsNumLockIndicator(
-                #     update_interval=0.1,
-                # ),
                 widget.Net(
-                    format='[{down} ↓↑ {up}]',
+                    foreground='#bb9af7',
+                    format='[ 󰀂 {down} ↓↑ {up}]',
                     use_bits=True,
                     update_interval=1,
+                ),
+                widget.PulseVolume(
+                    foreground='#85e1fc',
+                    fmt='[  Volumen: {}]',
+                    update_interval=0.1,
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Clock(
-                    format='[%A, %d/%m/%Y, %H:%M:%S]',
+                    foreground='#ff966c',
+                    format='[ 󰃭 %A, %d/%m/%Y; 󰅐 %H:%M:%S]',
                     update_interval=1,
                 ),
-                #widget.QuickExit(),
             ],
             24,
             # 39,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=['ff00ff', '000000', 'ff00ff', '000000']  # Borders are magenta
             background='#1b2838',
         ),
     ),
