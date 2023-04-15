@@ -18,6 +18,7 @@ from libqtile.lazy import (
 from ..definitions.applications import (
     browser,
     gui_file_manager,
+    screenshot_tool,
     terminal_emulator,
 )
 # ../definitions/keybinds.py
@@ -63,6 +64,20 @@ keys = [
         'return',
         lazy.spawn(browser),
         desc='Launch browser',
+    ),
+    # -------------------------------------------------------------------------
+    #
+    # -------------------------------------------------------------------------
+    # ... la herramienta de capturas definida.
+    # -------------------------------------------------------------------------
+    # ... defined screenshot tool.
+    # -------------------------------------------------------------------------
+    # PRINT
+    Key(
+        [],
+        'print',
+        lazy.spawn(screenshot_tool),
+        desc='Launch screenshot tool',
     ),
     # -------------------------------------------------------------------------
     #
