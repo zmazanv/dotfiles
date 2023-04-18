@@ -56,7 +56,7 @@ widgets_with_systray = [
      widget.GroupBox(
          active='#c8d3f5',
          center_aligned=True,
-         disable_drag=False,
+         disable_drag=True,
          highlight_method='border',
          inactive='#444a73',
          margin=3,
