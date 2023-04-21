@@ -16,6 +16,7 @@ from libqtile.lazy import (
 )
 # ../definitions/applications.py
 from ..definitions.applications import (
+    application_launcher,
     browser,
     emoji_selector,
     gui_file_manager,
@@ -51,6 +52,20 @@ keys = [
         'return',
         lazy.spawn(terminal_emulator),
         desc='Launch terminal',
+    ),
+    # -------------------------------------------------------------------------
+    #
+    # -------------------------------------------------------------------------
+    # ...l lanzador de aplicaciones definido.
+    # -------------------------------------------------------------------------
+    # ... defined application launcher.
+    # -------------------------------------------------------------------------
+    # SUPER + CONTROL + RETURN
+    Key(
+        [mod, 'control'],
+        'return',
+        lazy.spawn(application_launcher),
+        desc='Launch application launcher',
     ),
     # -------------------------------------------------------------------------
     #
@@ -97,9 +112,9 @@ keys = [
     # -------------------------------------------------------------------------
     #
     # -------------------------------------------------------------------------
-    # ...l gestor gráfico de archivos definido.
+    # ...l seleccionador de emoticones definido.
     # -------------------------------------------------------------------------
-    # ... defined graphical file manager.
+    # ... defined emoji selector.
     # -------------------------------------------------------------------------
     # SUPER + |
     Key(
