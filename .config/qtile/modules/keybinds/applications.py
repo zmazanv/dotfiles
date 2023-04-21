@@ -17,6 +17,7 @@ from libqtile.lazy import (
 # ../definitions/applications.py
 from ..definitions.applications import (
     browser,
+    emoji_selector,
     gui_file_manager,
     screenshot_tool,
     terminal_emulator,
@@ -92,6 +93,20 @@ keys = [
         'f',
         lazy.spawn(gui_file_manager),
         desc='Launch GUI file manager',
+    ),
+    # -------------------------------------------------------------------------
+    #
+    # -------------------------------------------------------------------------
+    # ...l gestor gráfico de archivos definido.
+    # -------------------------------------------------------------------------
+    # ... defined graphical file manager.
+    # -------------------------------------------------------------------------
+    # SUPER + |
+    Key(
+        [mod],
+        'print',
+        lazy.spawn(emoji_selector),
+        desc='Launch emoji selector',
     ),
     # -------------------------------------------------------------------------
     ###########################################################################
