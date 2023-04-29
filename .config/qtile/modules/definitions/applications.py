@@ -23,7 +23,8 @@ from libqtile.utils import guess_terminal
 # -----------------------------------------------------------------------------
 # The application launcher to be used will be...
 # -----------------------------------------------------------------------------
-application_launcher = 'rofi -monitor -1 -show drun'
+# application_launcher = 'rofi -monitor -1 -show drun'
+application_launcher = 'rofi -monitor -1 -modes drun,run -show drun -icon-theme "Papirus" -show-icons'
 # -----------------------------------------------------------------------------
 ###############################################################################
 

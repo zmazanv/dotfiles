@@ -35,6 +35,7 @@ from modules.keybinds import (
     audio,
     brightness,
     capture,
+    display,
     management,
     # widgets,
     windows,
@@ -56,6 +57,7 @@ keys = (
     + audio.keys
     + brightness.keys
     + capture.keys
+    + display.keys
     + management.keys
     # + widgets.keys
     + windows.keys
