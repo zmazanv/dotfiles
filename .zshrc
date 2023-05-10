@@ -10,24 +10,23 @@ KEYTIMEOUT=1
 
 
 # The following lines were added by compinstall
-zstyle ':completion:*' auto-description 'Especifica: %d'
-zstyle ':completion:*' completer _list _oldlist _expand _complete _ignored _match _correct _approximate _prefix
+zstyle ':completion:*' auto-description 'Specify: %d'
+zstyle ':completion:*' completer _oldlist _expand _complete _ignored _match _correct _approximate _prefix
 zstyle ':completion:*' completions 1
 zstyle ':completion:*' expand prefix suffix
-zstyle ':completion:*' format 'Completando: %d'
+zstyle ':completion:*' file-sort name
+zstyle ':completion:*' format 'Completing: %d'
 zstyle ':completion:*' glob 1
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAl %p: Usa TAB para más, o el caracter para insertar%s
+zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'l:|=* r:|=*'
 zstyle ':completion:*' match-original both
 zstyle ':completion:*' max-errors 2 numeric
 zstyle ':completion:*' menu select=1
-zstyle ':completion:*' original true
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
-zstyle ':completion:*' prompt 'Cantidad de errores encontrados: %e'
-zstyle ':completion:*' select-prompt %SDesplazamiento activo: selección actual al %p%s
+zstyle ':completion:*' prompt 'Number of errors found: %e'
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' substitute 1
 zstyle ':completion:*' verbose true
