@@ -1,0 +1,10 @@
+[Unit]
+Description=Dunst Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/dunst
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
