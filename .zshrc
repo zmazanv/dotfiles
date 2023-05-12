@@ -44,11 +44,11 @@ compinit
 # PLUGINS
 ###############################################################################
 #------------------------------------------------------------------------------
-# Autosugerencias como en Fish.
+# Resaltado de sintaxis como en Fish.
 #------------------------------------------------------------------------------
-# Fish-like autosuggestions.
+# Fish-like syntax highlighting.
 #------------------------------------------------------------------------------
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
@@ -57,14 +57,18 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Fish-like history substring search.
 #------------------------------------------------------------------------------
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Resaltado de sintaxis como en Fish.
+# Autosugerencias como en Fish.
 #------------------------------------------------------------------------------
-# Fish-like syntax highlighting.
+# Fish-like autosuggestions.
 #------------------------------------------------------------------------------
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #------------------------------------------------------------------------------
 ###############################################################################
 
