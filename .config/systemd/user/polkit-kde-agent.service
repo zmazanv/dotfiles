@@ -1,0 +1,10 @@
+[Unit]
+Description=Polkit-KDE-Agent Service
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/polkit-kde-authentication-agent-1
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
