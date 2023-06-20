@@ -121,6 +121,16 @@ alias R='rm --interactive=once --verbose'
 complete -F _longopt R
 alias Rr='rm --interactive=once --recursive --verbose'
 complete -F _longopt Rr
+alias Rrf='rm --force --interactive=once --recursive --verbose'
+complete -F _longopt Rrf
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+# thefuck
+#------------------------------------------------------------------------------
+eval "$(thefuck --alias)"
+alias s='fuck'
+alias sf='fuck --yeah'
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
