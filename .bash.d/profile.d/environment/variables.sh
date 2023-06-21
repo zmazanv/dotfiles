@@ -8,41 +8,41 @@
 # ENVIRONMENT VARIABLES
 ###############################################################################
 #------------------------------------------------------------------------------
-# Firefox será el navegador predeterminado.
+# Establece el navegador predeterminado.
 #------------------------------------------------------------------------------
-# Firefox will be the default browser.
+# Set the default browser.
 #------------------------------------------------------------------------------
 #export BROWSER='firefox'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Neovim será el editor predeterminado.
+# Establece el editor predeterminado.
 #------------------------------------------------------------------------------
-# Neovim will be the default editor.
+# Set the default editor.
 #------------------------------------------------------------------------------
 export EDITOR='nvim'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Las aplicaciones de Qt usarán las opciones de tema definidas por qt5ct.
+# Establece qué será usado para establecer las opciones de tema para Qt.
 #------------------------------------------------------------------------------
-# Qt applications will use theme options set by qt5ct.
+# Set what will be used to set Qt theme options.
 #------------------------------------------------------------------------------
 export QT_QPA_PLATFORMTHEME='qt5ct'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Neovim será el editor visual predeterminado.
+# Establece el editor visual predeterminado.
 #------------------------------------------------------------------------------
-# Neovim will be the default visual editor.
+# Set the default visual editor.
 #------------------------------------------------------------------------------
 export VISUAL='nvim'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Zsh buscará archivos configuratorios en `~/.config/zsh`.
+# Establece dónde se buscarán los archivos configuratorios de Zsh.
 #------------------------------------------------------------------------------
-# Zsh will look for configuration files in `~/.config/zsh`.
+# Set where to look for Zsh configuration files.
 #------------------------------------------------------------------------------
 #export ZDOTDIR='~/.dotfiles'
 #------------------------------------------------------------------------------
