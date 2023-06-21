@@ -58,10 +58,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Fish-like history substring search.
 #------------------------------------------------------------------------------
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
@@ -71,6 +67,16 @@ bindkey -M vicmd 'j' history-substring-search-down
 #------------------------------------------------------------------------------
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #------------------------------------------------------------------------------
+###############################################################################
+
+
+
+###############################################################################
+# MAPAS DE TECLA
+###############################################################################
+# KEYBINDS
+###############################################################################
+source ~/.zshrc.d/keybinds/keybinds.zsh
 ###############################################################################
 
 
