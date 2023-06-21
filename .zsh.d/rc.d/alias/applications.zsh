@@ -1,197 +1,163 @@
 ###############################################################################
-# ~/.zshrc.d/options/completion.zsh
+# ~/.zsh.d/rc.d/alias/applications.zsh
 #
-# RELLENADO
+# ALIAS PARA APLICACIONES
 ###############################################################################
-# ~/.zshrc.d/options/completion.zsh
+# ~/.zsh.d/rc.d/alias/applications.zsh
 #
-# COMPLETION
+# ALIASES FOR APPLICATIONS
 ###############################################################################
 #------------------------------------------------------------------------------
-# Muestra una descripción adicional de elementos de rellenado cuando posible.
+# acpi
 #------------------------------------------------------------------------------
-# Show an extra description of completion items when possible.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' auto-description 'Specify: %d'
+#alias p='acpi'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Lista de estategias de rellenado a probar, en orden, al intentar rellenar.
+# bat
 #------------------------------------------------------------------------------
-# List of completion strategies to try, in order, when attempting completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' completer _oldlist _expand _complete _ignored _match _correct _approximate _prefix
+alias b='bat'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Fuerza a que los rellenos se enumeren aunque sólo haya un relleno posible.
+# cal
 #------------------------------------------------------------------------------
-# Force completions to be listed even if there is only one possible completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' completions 1
+alias cal='cal --monday'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Habilita la expansión del prefijo y del sufijo en las enumeraciones de
-# rellenado.
+# cd
 #------------------------------------------------------------------------------
-# Enable expanding of prefix and suffix in completion listings.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' expand prefix suffix
+alias c='cd'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Ordena los nombres de archivos en las enumeraciones de rellenado.
+# cp
 #------------------------------------------------------------------------------
-# Sort filenames in completion listings.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' file-sort name
-#------------------------------------------------------------------------------
-#
-#------------------------------------------------------------------------------
-# Muestra un mensaje adicional cuando rellenando.
-#------------------------------------------------------------------------------
-# Show an extra message when completing.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' format 'Completing: %d'
+alias C='cp --verbose'
+alias Cr='cp --recursive --verbose'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Habilita globbing en el rellenado.
+# fd
 #------------------------------------------------------------------------------
-# Enable globbing in completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' glob 1
+alias f='fd --hidden --no-ignore'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Asigna el nombre del group a una cadena vacía en las enumeraciones de
-# rellenado.
+# grep
 #------------------------------------------------------------------------------
-# Set the group name to an empty string in the completion listings.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' group-name ''
+alias grep='grep --color=auto'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Establece el color de la enumeración en el rellenado.
+# kitty
 #------------------------------------------------------------------------------
-# Set the color of the listing in the completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' list-colors ''
+alias icat='kitty +kitten icat'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Establece el prompt cuando enumerando los rellenos.
+# ls
 #------------------------------------------------------------------------------
-# Set the prompt when listing the completions.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+alias ls='ls --color=auto'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Personaliza el algoritmo de emparejamiento usado al intentar rellenar.
+# lsd
 #------------------------------------------------------------------------------
-# Customize the matching algorithm used when trying completion.
+alias l='lsd --almost-all --classify --group-directories-first --long --total-size'
+alias li='lsd --almost-all --classify --group-directories-first --inode --long --total-size'
 #------------------------------------------------------------------------------
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'l:|=* r:|=*'
+alias la='lsd --all --classify --group-directories-first --long --total-size'
+alias lai='lsd --all --classify --group-directories-first --inode --long --total-size'
 #------------------------------------------------------------------------------
-#
-#------------------------------------------------------------------------------
-# Empareja las cadenas original y transformada al rellenar insensiblemente a
-# mayúsculas y minúsculas o ignorando el prefijo/sufijo.
-#------------------------------------------------------------------------------
-# Match both the original string and the transformed string when doing
-# case-insensitive or prefix/suffix ignoring completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' match-original both
+alias lc='lsd --almost-all --classify --group-directories-first'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Establece el número máximo de errores permitidos en el rellenado aproximado.
+# mkdir
 #------------------------------------------------------------------------------
-# Set the maximum number of errors allowed in the approximate completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' max-errors 2 numeric
-#------------------------------------------------------------------------------
-#
-#------------------------------------------------------------------------------
-# Habilita la selección de rellenos en un formato tipo menú.
-#------------------------------------------------------------------------------
-# Enable selection of completions in a menu-like format.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' menu select=1
+alias D='mkdir --verbose'
+alias Dp='mkdir --parents --verbose'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Conserva el prefijo para ciertos patrones de rellenado.
+# mv
 #------------------------------------------------------------------------------
-# Preserve the prefix for certain patterns in completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' preserve-prefix '//[^/]##/'
+alias M='mv --verbose'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Establece el prompt cuando hay errores en el rellenado.
+# nvim
 #------------------------------------------------------------------------------
-# Set the prompt when there are errors in completion.
+alias v='nvim'
 #------------------------------------------------------------------------------
-zstyle ':completion:*' prompt 'Number of errors found: %e'
-#------------------------------------------------------------------------------
-#
-#------------------------------------------------------------------------------
-# Establece el prompt cuando desplazándose por las selecciones.
-#------------------------------------------------------------------------------
-# Set the prompt when scrolling through selections.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+alias nvimup='nvim -c "PackerSync"'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Incluye `.` y `..` como directorios especiales en el rellenado.
+# pulsemixer
 #------------------------------------------------------------------------------
-# Include `.` and `..` as special directories in completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' special-dirs true
+alias pm='pulsemixer'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Habilita sustitución de comandos en el rellenado.
+# rg
 #------------------------------------------------------------------------------
-# Enable command substitution in completion.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' substitute 1
+alias g='rg --hidden --no-ignore'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Habilita el modo verboso, el cual da mensajes más detallados.
+# rm
 #------------------------------------------------------------------------------
-# Enable verbose mode, which gives more detailed messages.
-#------------------------------------------------------------------------------
-zstyle ':completion:*' verbose true
-#------------------------------------------------------------------------------
-#
-#------------------------------------------------------------------------------
-# Define el archivo que será usado por la función `compinstall`.
-#------------------------------------------------------------------------------
-# Set the file to be used by the `compinstall` function.
-#------------------------------------------------------------------------------
-zstyle :compinstall filename '~/.zshrc.d/options/completion.zsh'
+alias R='rm --interactive=once --verbose'
+alias Rr='rm --interactive=once --recursive --verbose'
+alias Rrf='rm --force --interactive=once --recursive --verbose'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Marca `compinit` para ser autocargado.
+# thefuck
 #------------------------------------------------------------------------------
-# Mark `compinit` for autoloading.
-#------------------------------------------------------------------------------
-autoload -Uz compinit
+eval "$(thefuck --alias)"
+alias s='fuck'
+alias sf='fuck --yeah'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
-# Carga e inicializa el sistema de rellenado.
+# touch
 #------------------------------------------------------------------------------
-# Load and initialize the completion system.
+alias T='touch'
 #------------------------------------------------------------------------------
-compinit
+#
+#------------------------------------------------------------------------------
+# trash-cli
+#------------------------------------------------------------------------------
+alias B='trash-list'
+alias Be='trash-empty'
+alias Bm='trash-put'
+alias Bu='trash-restore'
+alias Br='trash-rm'
+#------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------
+# tree
+#------------------------------------------------------------------------------
+alias t='tree -a -C --dirsfirst'
+alias tl='tree -a -C --dirsfirst -L'
+#------------------------------------------------------------------------------
+alias ta='tree -C --dirsfirst'
+alias tal='tree -C --dirsfirst -L'
+#------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------
+# vim
+#------------------------------------------------------------------------------
+alias vimup='vim -c ":PlugUpgrade | :PlugUpdate"'
+#------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------
+# zathura
+#------------------------------------------------------------------------------
+alias z='zathura'
 #------------------------------------------------------------------------------
 ###############################################################################
