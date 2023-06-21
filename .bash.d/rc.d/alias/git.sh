@@ -1,13 +1,12 @@
 ###############################################################################
-# ~/.bashrc.d/alias/git.sh
+# ~/.bash.d/rc.d/alias/git.sh
 #
-# Alias Para Repositorios de Git
+# ALIAS PARA REPOSITORIOS DE GIT
 ###############################################################################
-# ~/.bashrc.d/alias/git.sh
+# ~/.bash.d/rc.d/alias/git.sh
 #
-# Aliases for Git Repositories.
+# ALIASES FOR GIT REPOSITORIES
 ###############################################################################
-
 #------------------------------------------------------------------------------
 # dotfiles
 # $HOME -> $HOME/.dotfiles/
@@ -17,3 +16,4 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 source /usr/share/bash-completion/completions/git
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main dotfiles
 #------------------------------------------------------------------------------
+###############################################################################
