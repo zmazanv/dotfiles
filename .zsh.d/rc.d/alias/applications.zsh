@@ -112,7 +112,7 @@ alias g='rg --hidden --no-ignore'
 #------------------------------------------------------------------------------
 alias R='rm --interactive=once --verbose'
 alias Rr='rm --interactive=once --recursive --verbose'
-alias Rrf='rm --force --interactive=once --recursive --verbose'
+alias Rrf='rm --interactive=never --recursive --verbose'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
