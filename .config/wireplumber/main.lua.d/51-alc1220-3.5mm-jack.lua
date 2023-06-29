@@ -3,7 +3,13 @@ rule = {
     {
       -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado ALC1220 emparejando su nombre de nódulo.
       -- The 3.5mm jack audio sink node of the ALC1220 integrated chip will be identified by matching its node name.
-      { "node.name", "matches", "alsa_output.pci-0000_0c_00*" },
+      { "node.name", "matches", "alsa_output*" },
+      -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado ALC1220 emparejando exactamente su apodo de nódulo.
+      -- The 3.5mm jack audio sink node of the ALC1220 integrated chip will be identified by matching exactly its node nickname.
+      { "node.nick", "equals", "ALC1220 Analog" },
+      -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado ALC1220 emparejando exactamente su clase de medios.
+      -- The 3.5mm jack audio sink node of the ALC1220 integrated chip will be identified by matching exactly its media class.
+      { "media.class", "equals", "Audio/Sink" },
     },
   },
   apply_properties = {

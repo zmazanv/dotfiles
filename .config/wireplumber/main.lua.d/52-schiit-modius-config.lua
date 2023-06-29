@@ -3,7 +3,17 @@ rule = {
     {
       -- Se identificará el nódulo de la salida de audio del DAC Schiit Modius emparejando su nombre de nódulo.
       -- The Schiit Modius DAC audio sink node will be identified by matching its node name.
-      { "node.name", "matches", "alsa_output.usb-Schiit_Audio_Schiit_Unison_Modius*" },
+      { "node.name", "matches", "alsa_output*Schiit*Modius*" },
+    },
+    -- O
+    -- OR
+    {
+      -- Se identificará el nódulo de la salida de audio del DAC Schiit Modius emparejando exactamente su apodo de nódulo.
+      -- The Schiit Modius DAC audio sink node will be identified by matching exactly its node name.
+      { "node.nick", "equals", "Schiit Unison Modius" },
+      -- Se identificará el nódulo de la salida de audio del DAC Schiit Modius emparejando exactamente su clase de medios.
+      -- The Schiit Modius DAC audio sink node will be identified by matching exactly its media class.
+      { "media.class", "equals", "Audio/Sink" },
     },
   },
   apply_properties = {
