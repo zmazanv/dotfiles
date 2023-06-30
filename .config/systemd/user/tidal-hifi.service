@@ -1,0 +1,11 @@
+[Unit]
+Description=Tidal Hifi Service
+
+[Service]
+Type=simple
+#ExecStart=/opt/tidal-hifi/tidal-hifi
+ExecStart=/opt/tidal-hifi/tidal-hifi --enable-features=UseOzonePlatform --ozone-platform=wayland
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
