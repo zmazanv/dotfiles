@@ -7,4 +7,4 @@ ExecStart=/usr/bin/steam-runtime -silent
 Restart=on-failure
 
 [Install]
-WantedBy=autostart.target
+WantedBy=autostart-x11.target autostart-wayland.target

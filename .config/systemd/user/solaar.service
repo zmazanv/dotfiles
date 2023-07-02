@@ -7,4 +7,4 @@ ExecStart=/usr/bin/solaar --window=hide
 Restart=on-failure
 
 [Install]
-WantedBy=autostart.target
+WantedBy=autostart-x11.target autostart-wayland.target

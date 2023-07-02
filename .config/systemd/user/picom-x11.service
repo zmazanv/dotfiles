@@ -1,5 +1,5 @@
 [Unit]
-Description=Picom Service
+Description=Picom X11 Service
 
 [Service]
 Type=simple
@@ -7,4 +7,4 @@ ExecStart=/usr/bin/picom --unredir-if-possible
 Restart=on-failure
 
 [Install]
-WantedBy=autostart.target
+WantedBy=autostart-x11.target

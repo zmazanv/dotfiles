@@ -1,0 +1,10 @@
+[Unit]
+Description=Tidal Hifi X11 Service
+
+[Service]
+Type=simple
+ExecStart=/opt/tidal-hifi/tidal-hifi
+Restart=on-failure
+
+[Install]
+WantedBy=autostart-x11.target

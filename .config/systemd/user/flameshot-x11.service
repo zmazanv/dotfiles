@@ -1,5 +1,5 @@
 [Unit]
-Description=Flameshot Service
+Description=Flameshot X11 Service
 
 [Service]
 Type=simple
@@ -7,4 +7,4 @@ ExecStart=/usr/bin/flameshot
 Restart=on-failure
 
 [Install]
-WantedBy=autostart.target
+WantedBy=autostart-x11.target

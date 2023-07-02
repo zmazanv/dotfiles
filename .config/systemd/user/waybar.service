@@ -1,0 +1,10 @@
+[Unit]
+Description=Waybar Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/waybar
+Restart=on-failure
+
+[Install]
+WantedBy=autostart-wayland.target
