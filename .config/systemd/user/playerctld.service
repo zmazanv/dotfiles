@@ -1,0 +1,10 @@
+[Unit]
+Description=Playerctl Daemon Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/playerctld
+Restart=on-failure
+
+[Install]
+WantedBy=autostart-x11.target autostart-wayland.target
