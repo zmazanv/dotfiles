@@ -1,5 +1,5 @@
 [Unit]
-Description=Discord Wayland Service
+Description=Discord Service
 
 [Service]
 Type=simple
@@ -7,4 +7,4 @@ ExecStart=/opt/discord/Discord --enable-features=UseOzonePlatform --ozone-platfo
 Restart=on-failure
 
 [Install]
-WantedBy=autostart-wayland.target
+WantedBy=autostart.target

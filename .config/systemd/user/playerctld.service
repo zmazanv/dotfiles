@@ -7,4 +7,4 @@ ExecStart=/usr/bin/playerctld
 Restart=on-failure
 
 [Install]
-WantedBy=autostart-x11.target autostart-wayland.target
+WantedBy=autostart.target

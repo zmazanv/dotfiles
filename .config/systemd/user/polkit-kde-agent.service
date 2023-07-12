@@ -7,4 +7,4 @@ ExecStart= /usr/lib/polkit-kde-authentication-agent-1
 Restart=on-failure
 
 [Install]
-WantedBy=autostart-x11.target autostart-wayland.target
+WantedBy=autostart.target
