@@ -104,10 +104,10 @@ alias pm='pulsemixer'
 #------------------------------------------------------------------------------
 # rg
 #------------------------------------------------------------------------------
-alias g='rg --glob="!.git"'
-alias gh='rg --glob="!.git" --hidden'
-alias ghn='rg --glob="!.git" --hidden --no-ignore'
-alias ghnn='rg --hidden --no-ignore'
+alias r='rg --glob="!.git"'
+alias rh='rg --glob="!.git" --hidden'
+alias rhn='rg --glob="!.git" --hidden --no-ignore'
+alias rhnn='rg --hidden --no-ignore'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
