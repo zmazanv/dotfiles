@@ -1,0 +1,10 @@
+[Unit]
+Description=WhatsApp Desktop Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/flatpak run io.github.mimbrero.WhatsAppDesktop --enable-features=UseOzonePlatform --ozone-platform=wayland --start-hidden
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
