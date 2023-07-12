@@ -3,13 +3,24 @@ rule = {
     {
       -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado ALC1220 emparejando su nombre de nódulo.
       -- The 3.5mm jack audio sink node of the ALC1220 integrated chip will be identified by matching its node name.
-      { "node.name", "matches", "alsa_output*" },
+      { "node.name",   "matches", "alsa_output*" },
       -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado ALC1220 emparejando exactamente su apodo de nódulo.
       -- The 3.5mm jack audio sink node of the ALC1220 integrated chip will be identified by matching exactly its node nickname.
-      { "node.nick", "equals", "ALC1220 Analog" },
+      { "node.nick",   "equals",  "ALC1220 Analog" },
       -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado ALC1220 emparejando exactamente su clase de medios.
       -- The 3.5mm jack audio sink node of the ALC1220 integrated chip will be identified by matching exactly its media class.
-      { "media.class", "equals", "Audio/Sink" },
+      { "media.class", "equals",  "Audio/Sink" },
+    },
+    {
+      -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado de Alder Lake emparejando su nombre de nódulo.
+      -- The 3.5mm jack audio sink node of the Alder Lake integrated chip will be identified by matching its node name.
+      { "node.name",   "matches", "alsa_output*" },
+      -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado de Alder Lake emparejando exactamente su apodo de nódulo.
+      -- The 3.5mm jack audio sink node of the Alder Lake integrated chip will be identified by matching exactly its node nickname.
+      { "node.nick",   "equals",  "Speaker + Headphones" },
+      -- Se identificará el nódulo de la salida de audio del puerto 3.5mm del chip integrado de Alder Lake emparejando exactamente su clase de medios.
+      -- The 3.5mm jack audio sink node of the Alder Lake integrated chip will be identified by matching exactly its media class.
+      { "media.class", "equals",  "Audio/Sink" },
     },
   },
   apply_properties = {
@@ -28,4 +39,4 @@ rule = {
   },
 }
 
-table.insert(alsa_monitor.rules,rule)
+table.insert(alsa_monitor.rules, rule)
