@@ -3,7 +3,7 @@ Description=Steam Service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/steam-runtime -silent
+ExecStart=/usr/bin/flatpak run com.valvesoftware.Steam -silent
 Restart=on-failure
 
 [Install]
