@@ -16,6 +16,7 @@ x-scheme-handler/webcals=userapp-Thunderbird-JW3E11.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
 text/markdown=nvim.desktop
 text/plain=nvim.desktop
+inode/directory=org.gnome.Nautilus.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-OWFE11.desktop;
