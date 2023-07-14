@@ -1,0 +1,10 @@
+[Unit]
+Description=Slack Desktop Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/flatpak run com.slack.Slack --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer --ozone-platform=wayland
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
