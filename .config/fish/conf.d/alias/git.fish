@@ -12,6 +12,6 @@
 # $HOME -> $HOME/.dotfiles/
 # https://gitlab.com/zmazan12g/dotfiles
 #------------------------------------------------------------------------------
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 #------------------------------------------------------------------------------
 ###############################################################################
