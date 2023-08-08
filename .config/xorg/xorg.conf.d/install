@@ -1,0 +1,83 @@
+#!/bin/bash
+
+###############################################################################
+# FUNCTIONS ###################################################################
+###############################################################################
+exit_check() {
+	local exit_code=$?
+	if [[ ${exit_code} == 0 ]]; then
+		echo "${GREEN}SUCCESS...${NORMAL}"
+		echo "${GREEN}CONTINUING...${NORMAL}"
+		echo
+	else
+		echo "${RED}FAILURE WITH EXIT CODE: ${MAGENTA}${exit_code}${RED}...${NORMAL}"
+		echo "${RED}EXITING...${NORMAL}"
+		exit
+	fi
+}
+
+cd_exit() {
+	echo "${RED}UNABLE TO CHANGE DIRECTORY WITH CD INTO: ${MAGENTA}$1${RED}...${NORMAL}"
+	echo "${RED}EXITING...${NORMAL}"
+	exit
+}
+
+pushd_exit() {
+	echo "${RED}UNABLE TO CHANGE DIRECTORY WITH PUSHD INTO: ${MAGENTA}$1${RED}...${NORMAL}"
+	echo "${RED}EXITING...${NORMAL}"
+	exit
+}
+
+popd_exit() {
+	echo "${RED}UNABLE TO CHANGE DIRECTORY WITH POPD INTO: ${MAGENTA}$1${RED}...${NORMAL}"
+	echo "${RED}EXITING...${NORMAL}"
+	exit
+}
+
+export -f exit_check
+export -f pushd_exit
+export -f popd_exit
+###############################################################################
+
+###############################################################################
+# VARIABLES ###################################################################
+###############################################################################
+main_script_dir=$(dirname "$0")
+
+export BLACK=$(tput setaf 0)
+export RED=$(tput setaf 1)
+export GREEN=$(tput setaf 2)
+export YELLOW=$(tput setaf 3)
+export LIME_YELLOW=$(tput setaf 190)
+export POWDER_BLUE=$(tput setaf 153)
+export BLUE=$(tput setaf 4)
+export MAGENTA=$(tput setaf 5)
+export CYAN=$(tput setaf 6)
+export WHITE=$(tput setaf 7)
+export BRIGHT=$(tput bold)
+export NORMAL=$(tput sgr0)
+export BLINK=$(tput blink)
+export REVERSE=$(tput smso)
+export UNDERLINE=$(tput smul)
+###############################################################################
+
+###############################################################################
+# SETUP #######################################################################
+###############################################################################
+cd "${main_script_dir}" || cd_exit "${main_script_dir}"
+###############################################################################
+
+sudo echo >/dev/null
+echo "${YELLOW}Ensuring ${NORMAL}${REVERSE}/etc/X11/xorg.conf.d${NORMAL}${YELLOW} exists, creating it if necessary...${NORMAL}"
+sudo mkdir -pv /etc/X11/xorg.conf.d
+exit_check
+
+for file in "${main_script_dir}"/*; do
+    if [[ "$(basename "$file")" != 'install' ]]; then
+        echo "${YELLOW}Copying ${CYAN}$(basename "$file")${YELLOW} to ${NORMAL}${REVERSE}/etc/X11/xorg.conf.d${NORMAL}${YELLOW}...${NORMAL}"
+        sudo cp -iv "$file" -t /etc/X11/xorg.conf.d
+        exit_check
+    fi
+done
+
+echo "${MAGENTA}The changes will be applied for the next Xorg session!${NORMAL}"
