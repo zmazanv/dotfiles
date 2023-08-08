@@ -34,7 +34,7 @@ keys = [
     # SUPER + p
     Key(
         [mod],
-        'o',
+        'p',
         lazy.to_screen(0),
         desc='Switch focus to monitor 1',
     ),
@@ -48,7 +48,7 @@ keys = [
     # SUPER + o
     Key(
         [mod],
-        'p',
+        'o',
         lazy.to_screen(1),
         desc='Switch focus to monitor 2',
     ),
