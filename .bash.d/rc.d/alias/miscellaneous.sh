@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.bash.d/rc.d/alias/miscellaneous.sh
+# $HOME/.bash.d/rc.d/alias/miscellaneous.sh
 #
 # ALIAS PARA USOS MISCELÁNEOS
 ###############################################################################
-# ~/.bash.d/rc.d/alias/miscellaneous.sh
+# $HOME/.bash.d/rc.d/alias/miscellaneous.sh
 #
 # ALIASES FOR MISCELLANEOUS USES
 ###############################################################################

@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.zsh.d/rc.d/keybinds/keybinds.zsh
+# $HOME/.zsh.d/rc.d/keybinds/keybinds.zsh
 #
 # MAPAS DE TECLA
 ###############################################################################
-# ~/.zsh.d/rc.d/keybinds/keybinds.zsh
+# $HOME/.zsh.d/rc.d/keybinds/keybinds.zsh
 #
 # KEYBINDS
 ###############################################################################

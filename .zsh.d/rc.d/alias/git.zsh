@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.zsh.d/rc.d/alias/git.zsh
+# $HOME/.zsh.d/rc.d/alias/git.zsh
 #
 # ALIAS PARA REPOSITORIOS DE GIT
 ###############################################################################
-# ~/.zsh.d/rc.d/alias/git.zsh
+# $HOME/.zsh.d/rc.d/alias/git.zsh
 #
 # ALIASES FOR GIT REPOSITORIES
 ###############################################################################

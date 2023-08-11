@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.zsh.d/rc.d/alias/miscellaneous.zsh
+# $HOME/.zsh.d/rc.d/alias/miscellaneous.zsh
 #
 # ALIAS PARA USOS MISCELÁNEOS
 ###############################################################################
-# ~/.zsh.d/rc.d/alias/miscellaneous.zsh
+# $HOME/.zsh.d/rc.d/alias/miscellaneous.zsh
 #
 # ALIASES FOR MISCELLANEOUS USES
 ###############################################################################

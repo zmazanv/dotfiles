@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.zsh.d/rc.d/options/completion.zsh
+# $HOME/.zsh.d/rc.d/options/completion.zsh
 #
 # RELLENADO
 ###############################################################################
-# ~/.zsh.d/rc.d/options/completion.zsh
+# $HOME/.zsh.d/rc.d/options/completion.zsh
 #
 # COMPLETION
 ###############################################################################
@@ -176,7 +176,7 @@ zstyle ':completion:*' verbose true
 #------------------------------------------------------------------------------
 # Set the file to be used by the `compinstall` function.
 #------------------------------------------------------------------------------
-zstyle :compinstall filename '~/.zsh.d/rc.d/options/completion.zsh'
+zstyle :compinstall filename '$HOME/.zsh.d/rc.d/options/completion.zsh'
 #------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------

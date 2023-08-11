@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.zsh.d/rc.d/alias/applications.zsh
+# $HOME/.zsh.d/rc.d/alias/applications.zsh
 #
 # ALIAS PARA APLICACIONES
 ###############################################################################
-# ~/.zsh.d/rc.d/alias/applications.zsh
+# $HOME/.zsh.d/rc.d/alias/applications.zsh
 #
 # ALIASES FOR APPLICATIONS
 ###############################################################################

@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.zsh.d/rc.d/functions/functions.zsh
+# $HOME/.zsh.d/rc.d/functions/functions.zsh
 #
 # FUNCIONES
 ###############################################################################
-# ~/.zsh.d/rc.d/functions/functions.zsh
+# $HOME/.zsh.d/rc.d/functions/functions.zsh
 #
 # FUNCTIONS
 ###############################################################################
