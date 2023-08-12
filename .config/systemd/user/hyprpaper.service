@@ -1,0 +1,10 @@
+[Unit]
+Description=Hyprpaper Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hyprpaper
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
