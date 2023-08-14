@@ -3,7 +3,7 @@ Description=Tidal Hifi Service
 
 [Service]
 Type=simple
-ExecStart=/opt/tidal-hifi/tidal-hifi --enable-features=UseOzonePlatform --ozone-platform=wayland
+ExecStart=/opt/tidal-hifi/tidal-hifi
 Restart=on-failure
 
 [Install]
