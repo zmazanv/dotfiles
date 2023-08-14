@@ -10,10 +10,15 @@
 #------------------------------------------------------------------------------
 # dotfiles
 # $HOME -> $HOME/.dotfiles/
-# https://gitlab.com/zmazan12g/dotfiles
+# https://gitlab.com/zmazanv/dotfiles
 #------------------------------------------------------------------------------
 alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-source /usr/share/bash-completion/completions/git
-complete -o bashdefault -o default -o nospace -F __git_wrap__git_main dotfiles
+#------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------
+# dotfiles
+# https://gitlab.com/zmazanv/dotfiles
+#------------------------------------------------------------------------------
+alias dotfiles-web='glab repo view --web zmazanv/dotfiles'
 #------------------------------------------------------------------------------
 ###############################################################################
