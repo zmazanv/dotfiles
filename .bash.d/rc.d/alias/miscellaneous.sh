@@ -1,19 +1,17 @@
 ###############################################################################
-# $HOME/.zsh.d/rc.d/functions/functions.zsh
+# $HOME/.bash.d/rc.d/alias/miscellaneous.sh
 #
-# FUNCIONES
+# ALIAS PARA USOS MISCELÁNEOS
 ###############################################################################
-# $HOME/.zsh.d/rc.d/functions/functions.zsh
+# $HOME/.bash.d/rc.d/alias/miscellaneous.sh
 #
-# FUNCTIONS
+# ALIASES FOR MISCELLANEOUS USES
 ###############################################################################
 #------------------------------------------------------------------------------
-# lfcd
+# Revisa el progreso de compilación de sombreadores de Steam.
 #------------------------------------------------------------------------------
-LFCD='/etc/profile.d/lfcd.sh'
-
-if [ -f "${LFCD}" ]; then
-	source "${LFCD}"
-fi
+# Check Steam shader compilation progress.
+#------------------------------------------------------------------------------
+alias steam-shader-progress='tail --verbose --sleep-interval 0.1 --follow $HOME/.var/app/com.valvesoftware.Steam/.local/share/Steam/logs/shader_log.txt'
 #------------------------------------------------------------------------------
 ###############################################################################

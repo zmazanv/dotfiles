@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.bash.d/rc.d/alias/git.sh
+# $HOME/.bash.d/rc.d/alias/git.sh
 #
 # ALIAS PARA REPOSITORIOS DE GIT
 ###############################################################################
-# ~/.bash.d/rc.d/alias/git.sh
+# $HOME/.bash.d/rc.d/alias/git.sh
 #
 # ALIASES FOR GIT REPOSITORIES
 ###############################################################################

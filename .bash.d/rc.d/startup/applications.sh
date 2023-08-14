@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.bash.d/rc.d/startup/applications.sh
+# $HOME/.bash.d/rc.d/startup/applications.sh
 #
 # APLICACIONES DE INICIO
 ###############################################################################
-# ~/.bash.d/rc.d/startup/applications.sh
+# $HOME/.bash.d/rc.d/startup/applications.sh
 #
 # STARTUP APPLICATIONS
 ###############################################################################

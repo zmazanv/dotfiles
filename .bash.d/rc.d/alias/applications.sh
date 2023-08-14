@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.bash.d/rc.d/alias/applications.sh
+# $HOME/.bash.d/rc.d/alias/applications.sh
 #
 # ALIAS PARA APLICACIONES
 ###############################################################################
-# ~/.bash.d/rc.d/alias/applications.sh
+# $HOME/.bash.d/rc.d/alias/applications.sh
 #
 # ALIASES FOR APPLICATIONS
 ###############################################################################

@@ -1,9 +1,9 @@
 ###############################################################################
-# ~/.zsh.d/rc.d/startup/applications.zsh
+# $HOME/.zsh.d/rc.d/startup/applications.zsh
 #
 # APLICACIONES DE INICIO
 ###############################################################################
-# ~/.zsh.d/rc.d/startup/applications.zsh
+# $HOME/.zsh.d/rc.d/startup/applications.zsh
 #
 # STARTUP APPLICATIONS
 ###############################################################################
