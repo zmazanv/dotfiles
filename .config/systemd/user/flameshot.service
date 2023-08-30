@@ -3,8 +3,8 @@ Description=Flameshot Service
 
 [Service]
 Type=simple
-Environment=XDG_CURRENT_DESKTOP=Sway
 ExecStart=/usr/bin/flatpak run org.flameshot.Flameshot
+ExecStop=/usr/bin/flatpak kill org.flameshot.Flameshot
 Restart=on-failure
 
 [Install]
