@@ -1,0 +1,11 @@
+[Unit]
+Description=Flameshot Service
+
+[Service]
+Type=simple
+Environment=XDG_CURRENT_DESKTOP=Sway
+ExecStart=/usr/bin/flatpak run org.flameshot.Flameshot
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
