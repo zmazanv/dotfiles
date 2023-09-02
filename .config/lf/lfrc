@@ -48,6 +48,15 @@ cmd open &{{
     esac
 }}
 
+cmd dotfiles-stage &{{
+    git --git-dir=$HOME/.dotfiles --work-tree=$HOME add "$f"
+}}
+cmd dotfiles-status ${{
+    echo "$(git --git-dir=$HOME/.dotfiles --work-tree=$HOME status "$PWD")"
+}}
+map .a dotfiles-stage
+map .l dotfiles-status
+
 # mkdir command. See wiki if you want it to select created dir
 map a :push %mkdir<space>
 
