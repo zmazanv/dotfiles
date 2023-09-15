@@ -147,40 +147,40 @@ alias ls='ls --color=auto'
 # █▄▄ ▄█ █▄▀
 ###############################################################################
 #----------------------------------------------------------------------------------
-# Display all entries except '.' and '..', classify entries by file type,
-# group directories before files, display in long format, and show total size.
+# Display all entries except '.' and '..', show file class indicators, group
+# directories before files, display in long format, and show total size.
 alias l='lsd --almost-all --classify --group-directories-first --long --total-size'
 #----------------------------------------------------------------------------------
 #
 #-------------------------------------------------------------------------------------------
-# Display with inode numbers all entries except '.' and '..', classify entries
-# by file type, group directories before files, display in long format, and
-# show total size.
+# Display with inode numbers all entries except '.' and '..', show file class
+# indicators, group directories before files, display in long format, and show
+# total size.
 #-------------------------------------------------------------------------------------------
 alias li='lsd --almost-all --classify --group-directories-first --inode --long --total-size'
 #-------------------------------------------------------------------------------------------
 #
-#----------------------------------------------------------------------------
-# Display all entries including '.' and '..', classify entries by file type,
-# group directories before files, display in long format, and show total size.
-#----------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+# Display all entries including '.' and '..', show file class indicators, group
+# directories before files, display in long format, and show total size.
+#------------------------------------------------------------------------------
 alias la='lsd --all --classify --group-directories-first --long --total-size'
-#----------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 #
 #-------------------------------------------------------------------------------------
-# Display with inode numbers all entries including '.' and '..', classify
-# entries by file type, group directories before files, display in long
-# format, and show total size.
+# Display with inode numbers all entries including '.' and '..', show file
+# class indicators, group directories before files, display in long format, and
+# show total size.
 #-------------------------------------------------------------------------------------
 alias lai='lsd --all --classify --group-directories-first --inode --long --total-size'
 #-------------------------------------------------------------------------------------
 #
-#----------------------------------------------------------------------------
-# Display all entries except '.' and '..', classify entries by file type, and
+#-------------------------------------------------------------------------
+# Display all entries except '.' and '..', show file class indicators, and
 # group directories before files.
-#----------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 alias lc='lsd --almost-all --classify --group-directories-first'
-#----------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 ###############################################################################
 
 ###############################################################################
