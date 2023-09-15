@@ -15,9 +15,7 @@
 
 # Source argument if it is a regular file; ignore if not.
 function check_source {
-	if [[ -f "$1" ]]; then
-		source "$1"
-	fi
+	[[ -f "$1" ]] && source "$1"
 }
 
 ###############################################################################
