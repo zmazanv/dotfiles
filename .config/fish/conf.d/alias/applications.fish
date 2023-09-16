@@ -555,7 +555,7 @@ alias Rrf='rm --interactive=never --recursive --verbose'
 #------------------------------------
 # Set the alias needed to enable use.
 #------------------------------------
-eval "$(thefuck --alias)"
+thefuck --alias | source
 #------------------------------------
 #
 #---------------
