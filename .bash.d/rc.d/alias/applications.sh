@@ -146,45 +146,39 @@ alias ls='ls --color=auto'
 # █░░ █▀ █▀▄
 # █▄▄ ▄█ █▄▀
 ###############################################################################
-#----------------------------------------------------------
-# Display all entries (except '.' and '..') in long format.
-#----------------------------------------------------------
+#-------------------------------------------------------------
+# Display all entries (excluding '.' and '..') in long format.
+#-------------------------------------------------------------
 alias l='lsd --almost-all --long'
-#----------------------------------------------------------
+#-------------------------------------------------------------
 #
-#-----------------------------------------------------------------------------
-# Display with inode numbers all entries (except '.' and '..') in long format.
-#-----------------------------------------------------------------------------
+#------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.' and '..') in long
+# format.
+#------------------------------------------------------------------------
 alias li='lsd --almost-all --inode --long'
-#-----------------------------------------------------------------------------
+#------------------------------------------------------------------------
 #
-#------------------------------------------------------------------------------
-# Display all entries (except '.' and '..') in long format and show total size.
-#------------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+# Display all entries (excluding '.' and '..') in long format and show total
+# size.
+#---------------------------------------------------------------------------
 alias lt='lsd --almost-all --long --total-size'
-#------------------------------------------------------------------------------
+#---------------------------------------------------------------------------
 #
-#----------------------------------------------------------------------------
-# Display with inode numbers all entries (except '.' and '..') in long format
-# and show total size.
-#----------------------------------------------------------------------------
+#------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.' and '..') in long
+# format and show total size.
+#------------------------------------------------------------------------
 alias lit='lsd --almost-all --long --total-size'
 alias lti='lsd --almost-all --long --total-size'
-#----------------------------------------------------------------------------
+#------------------------------------------------------------------------
 #
 #-------------------------------------------------------------
 # Display all entries (including '.' and '..') in long format.
 #-------------------------------------------------------------
 alias la='lsd --all --long'
 #-------------------------------------------------------------
-#
-#---------------------------------------------------------------------------
-# Display all entries (including '.' and '..') in long format and show total
-# size.
-#---------------------------------------------------------------------------
-alias lat='lsd --all --long --total-size'
-alias lta='lsd --all --long --total-size'
-#---------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------
 # Display with inode numbers all entries (including '.' and '..') in long
@@ -193,6 +187,14 @@ alias lta='lsd --all --long --total-size'
 alias lai='lsd --all --inode --long'
 alias lia='lsd --all --inode --long'
 #------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display all entries (including '.' and '..') in long format and show total
+# size.
+#---------------------------------------------------------------------------
+alias lat='lsd --all --long --total-size'
+alias lta='lsd --all --long --total-size'
+#---------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------
 # Display with inode numbers all entries (including '.' and '..') in long
@@ -206,12 +208,246 @@ alias ltai='lsd --all --inode --long --total-size'
 alias ltia='lsd --all --inode --long --total-size'
 #------------------------------------------------------------------------
 #
-#-------------------------------------------------------------------------
-# Display all entries except '.' and '..', show file class indicators, and
-# group directories before files.
-#-------------------------------------------------------------------------
+#-------------------------------------------------------------
+# Display all entries (excluding '.' and '..') in grid format.
+#-------------------------------------------------------------
 alias lc='lsd --almost-all'
+#-------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.' and '..') in oneline
+# format.
+#---------------------------------------------------------------------------
+alias lci='lsd --almost-all --inode'
+#---------------------------------------------------------------------------
+#
+#-------------------------------------------------------------
+# Display all entries (including '.' and '..') in grid format.
+#-------------------------------------------------------------
+alias lac='lsd --all'
+alias lca='lsd --all'
+#-------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display with inode numbers all entries (including '.' and '..') in oneline
+# format.
+#---------------------------------------------------------------------------
+alias laci='lsd --all'
+alias laic='lsd --all'
+alias lcai='lsd --all'
+alias lcia='lsd --all'
+alias liac='lsd --all'
+alias lica='lsd --all'
+#---------------------------------------------------------------------------
+###############################################################################
+
+###############################################################################
+# LSD (TREE)
+# █░░ █▀ █▀▄   ▄▀ ▀█▀ █▀█ █▀▀ █▀▀ ▀▄
+# █▄▄ ▄█ █▄▀   ▀▄ ░█░ █▀▄ ██▄ ██▄ ▄▀
+###############################################################################
+#--------------------------------------------------------------------------
+# Display all entries (excluding '.', '..', and '.git') recursively in long
+# tree format.
+#--------------------------------------------------------------------------
+alias t='lsd --almost-all --long --ignore-glob .git --tree'
+#--------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------
+# Display all entries (excluding '.', '..', and '.git') recursively in long
+# tree format, and take a max depth argument.
+#--------------------------------------------------------------------------
+alias td='lsd --almost-all --long --ignore-glob .git --tree --depth'
+#--------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.', '..', and '.git')
+# recursively in long tree format.
+#--------------------------------------------------------------------------------
+alias ti='lsd --almost-all --inode --long --ignore-glob .git --total-size --tree'
+#--------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.', '..', and '.git')
+# recursively in long tree format and take a max depth argument.
+#-----------------------------------------------------------------------------------------
+alias tid='lsd --almost-all --inode --long --ignore-glob .git --total-size --tree --depth'
+#-----------------------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------
+# Display all entries (excluding '.', '..', and '.git') recursively in long
+# tree format and show total size.
+#--------------------------------------------------------------------------
+alias tt='lsd --almost-all --long --ignore-glob .git --total-size --tree'
+#--------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------------
+# Display all entries (excluding '.', '..', and '.git') recursively in long
+# tree format, show total size, and take a max depth argument.
+#---------------------------------------------------------------------------------
+alias ttd='lsd --almost-all --long --ignore-glob .git --total-size --tree --depth'
+#---------------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.', '..', and '.git')
+# recursively in long tree format and show total size.
+#---------------------------------------------------------------------------------
+alias tit='lsd --almost-all --inode --long --ignore-glob .git --total-size --tree'
+alias tti='lsd --almost-all --inode --long --ignore-glob .git --total-size --tree'
+#---------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.', '..', and '.git')
+# recursively in long tree format, show total size, and take a max depth argument.
+#------------------------------------------------------------------------------------------
+alias titd='lsd --almost-all --inode --long --ignore-glob .git --total-size --tree --depth'
+alias ttid='lsd --almost-all --inode --long --ignore-glob .git --total-size --tree --depth'
+#------------------------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display all entries (excluding '.' and '..'; including '.git') recursively
+# in long tree format.
+#---------------------------------------------------------------------------
+alias ta='lsd --all --long --tree'
+#---------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display all entries (excluding '.' and '..'; including '.git') recursively
+# in long tree format and take a max depth argument.
+#---------------------------------------------------------------------------
+alias tad='lsd --all --long --tree --depth'
+#---------------------------------------------------------------------------
+#
+#----------------------------------------------------------------------------
+# Display with inode numbers all entries
+# (excluding '.' and '..'; including '.git') recursively in long tree format.
+#----------------------------------------------------------------------------
+alias tai='lsd --all --inode --long --tree'
+alias tia='lsd --all --inode --long --tree'
+#----------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display with inode numbers all entries
+# (excluding '.' and '..'; including '.git') recursively in long tree format
+# and take a max depth argument.
+#---------------------------------------------------------------------------
+alias taid='lsd --all --inode --long --tree --depth'
+alias tiad='lsd --all --inode --long --tree --depth'
+#---------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display all entries (excluding '.' and '..'; including '.git') recursively
+# in long tree format and show total size.
+#---------------------------------------------------------------------------
+alias tat='lsd --all --long --total-size --tree'
+alias tta='lsd --all --long --total-size --tree'
+#---------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display all entries (excluding '.' and '..'; including '.git') recursively
+# in long tree format, show total size, and take a max depth argument.
+#---------------------------------------------------------------------------
+alias tatd='lsd --all --long --total-size --tree --depth'
+alias ttad='lsd --all --long --total-size --tree --depth'
+#---------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display with inode numbers all entries
+# (excluding '.' and '..'; including '.git') recursively in long tree format
+# and show total size.
+#---------------------------------------------------------------------------
+alias tait='lsd --all --inode --long --total-size --tree'
+alias tati='lsd --all --inode --long --total-size --tree'
+alias tiat='lsd --all --inode --long --total-size --tree'
+alias tita='lsd --all --inode --long --total-size --tree'
+alias ttai='lsd --all --inode --long --total-size --tree'
+alias ttia='lsd --all --inode --long --total-size --tree'
+#---------------------------------------------------------------------------
+#
+#----------------------------------------------------------------------------
+# Display with inode numbers all entries
+# (excluding '.' and '..'; including '.git') recursively in long tree format,
+# show total size, and take a max depth argument.
+#----------------------------------------------------------------------------
+alias taitd='lsd --all --inode --long --total-size --tree --depth'
+alias tatid='lsd --all --inode --long --total-size --tree --depth'
+alias tiatd='lsd --all --inode --long --total-size --tree --depth'
+alias titad='lsd --all --inode --long --total-size --tree --depth'
+alias ttaid='lsd --all --inode --long --total-size --tree --depth'
+alias ttiad='lsd --all --inode --long --total-size --tree --depth'
+#----------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------
+# Display all entries (excluding '.', '..', and '.git') recursively in oneline
+# tree format.
+#-----------------------------------------------------------------------------
+alias tc='lsd --almost-all --ignore-glob .git --tree'
+#-----------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------
+# Display all entries (excluding '.', '..', and '.git') recursively in oneline
+# tree format and take a max depth argument.
+#-----------------------------------------------------------------------------
+alias tcd='lsd --almost-all --ignore-glob .git --tree --depth'
+#-----------------------------------------------------------------------------
+#
 #-------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.', '..', and '.git')
+# recursively in oneline tree format.
+#-------------------------------------------------------------------------
+alias tci='lsd --all --ignore-glob .git --inode --tree'
+alias tic='lsd --all --ignore-glob .git --inode --tree'
+#-------------------------------------------------------------------------
+#
+#-------------------------------------------------------------------------
+# Display with inode numbers all entries (excluding '.', '..', and '.git')
+# recursively in oneline tree format and take a max depth argument.
+#-------------------------------------------------------------------------
+alias tcid='lsd --all --ignore-glob .git --inode --tree --depth'
+alias ticd='lsd --all --ignore-glob .git --inode --tree --depth'
+#-------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display all entries (excluding '.' and '..'; including '.git') recursively
+# in oneline tree format.
+#---------------------------------------------------------------------------
+alias tac='lsd --all --tree'
+alias tca='lsd --all --tree'
+#---------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------
+# Display all entries (excluding '.' and '..'; including '.git') recursively
+# in oneline tree format and take a max depth argument.
+#---------------------------------------------------------------------------
+alias tacd='lsd --all --tree --depth'
+alias tcad='lsd --all --tree --depth'
+#---------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------
+# Display with inode numbers all entries
+# (excluding '.' and '..'; including '.git') recursively in oneline tree
+# format.
+#-----------------------------------------------------------------------
+alias taci='lsd --all --inode --tree'
+alias taic='lsd --all --inode --tree'
+alias tcai='lsd --all --inode --tree'
+alias tcia='lsd --all --inode --tree'
+alias tiac='lsd --all --inode --tree'
+alias tica='lsd --all --inode --tree'
+#-----------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------
+# Display with inode numbers all entries
+# (excluding '.' and '..'; including '.git') recursively in oneline tree
+# format and take a max depth argument.
+#-----------------------------------------------------------------------
+alias tacid='lsd --all --inode --tree --depth'
+alias taicd='lsd --all --inode --tree --depth'
+alias tcaid='lsd --all --inode --tree --depth'
+alias tciad='lsd --all --inode --tree --depth'
+alias tiacd='lsd --all --inode --tree --depth'
+alias ticad='lsd --all --inode --tree --depth'
+#-----------------------------------------------------------------------
 ###############################################################################
 
 ###############################################################################
@@ -364,37 +600,6 @@ alias Bm='trash-put'
 complete -F _longopt Bm
 alias Bu='trash-restore'
 alias Br='trash-rm'
-###############################################################################
-
-###############################################################################
-# TREE
-# ▀█▀ █▀█ █▀▀ █▀▀
-# ░█░ █▀▄ ██▄ ██▄
-###############################################################################
-#-----------------------------------------
-# Display in color with directories first.
-#-----------------------------------------
-alias t='tree -C --dirsfirst'
-#-----------------------------------------
-#
-#---------------------------------------------------------------------------
-# Display in color with directories first and take max depth level argument.
-#---------------------------------------------------------------------------
-alias tl='tree -C --dirsfirst -L'
-#---------------------------------------------------------------------------
-#
-#-----------------------------------------------------------------
-# Display in color with directories first, including hidden files.
-#-----------------------------------------------------------------
-alias ta='tree -a -C --dirsfirst'
-#-----------------------------------------------------------------
-#
-#------------------------------------------------------------------------------
-# Display in color with directories first, including hidden files, and take max
-# depth level argument.
-#------------------------------------------------------------------------------
-alias tal='tree -a -C --dirsfirst -L'
-#------------------------------------------------------------------------------
 ###############################################################################
 
 ###############################################################################
