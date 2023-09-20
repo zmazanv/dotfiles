@@ -4,6 +4,7 @@ Description=Steam Service
 [Service]
 Type=simple
 ExecStart=/usr/bin/flatpak run com.valvesoftware.Steam -silent
+ExecStop=/usr/bin/flatpak kill com.valvesoftware.Steam
 Restart=on-failure
 
 [Install]
