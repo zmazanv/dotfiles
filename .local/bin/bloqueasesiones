@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Pause all current players.
+playerctl --all-players pause
+
+if [[ -f $HOME/.config/swaylock/config ]]; then
+	swaylock --config "$HOME/.config/swaylock/config" --daemonize
+else
+	swaylock --color 636363 --daemonize --indicator-caps-lock --indicator-idle-visible --show-failed--attempts --show-keyboard-layout
+fi
