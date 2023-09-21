@@ -38,7 +38,7 @@ daemonize
 #---------------------------------------------------------------------------------------------------------------------
 # Display the given image, optionally only on the given output.
 #---------------------------------------------------------------------------------------------------------------------
-image="$HOME/Imágenes/Telescopio_Espacial_James_Webb/Chamaeleon_Molecular_Cloud/Chamaeleon_Molecular_Cloud-NIRCam.png"
+image="$HOME/Imágenes/Telescopio_Espacial_James_Webb/Chamaeleon_Molecular_Cloud/Chamaeleon_Molecular_Cloud-NIRCam_resized.png"
 #---------------------------------------------------------------------------------------------------------------------
 #
 #--------------------------------------------------------
