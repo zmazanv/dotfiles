@@ -122,43 +122,43 @@
         "format": "{}% "
     },
     "temperature#chipset": {
-        "interval": 1,
-        // "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "critical-threshold": 78,
         "format": "Chipset: {temperatureC}°C {icon}",
+        "format-critical": "Chipset: {temperatureC}°C {icon}",
         "format-icons": [
             "",
             "",
             ""
-        ]
+        ],
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "interval": 1,
+        "tooltip": false
     },
     "temperature#cpu": {
-        "interval": 1,
-        // "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
         "format": "CPU: {temperatureC}°C {icon}",
+        "format-critical": "CPU: {temperatureC}°C {icon}",
         "format-icons": [
             "",
             "",
             ""
-        ]
+        ],
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
+        "interval": 1,
+        "tooltip": false
     },
     "temperature#t-sensor": {
-        "interval": 1,
-        // "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp4_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "critical-threshold": 45,
         "format": "T-Sensor: {temperatureC}°C {icon}",
+        "format-critical": "T-Sensor: {temperatureC}°C {icon}",
         "format-icons": [
             "",
             "",
             ""
-        ]
+        ],
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp4_input",
+        "interval": 1,
+        "tooltip": false
     },
     "backlight": {
         // "device": "acpi_video1",
