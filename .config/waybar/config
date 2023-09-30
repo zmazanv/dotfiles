@@ -7,13 +7,11 @@
     //#########################################################################
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "wlr/mode",
-        "wlr/scratchpad",
-        "custom/media"
+        "hyprland/workspaces"
+        //"custom/media"
     ],
     "modules-center": [
-        "wlr/window"
+        "hyprland/window"
     ],
     "modules-right": [
         "mpd",
@@ -27,41 +25,36 @@
         "temperature#t-sensor",
         "backlight",
         "keyboard-state",
-        "wlr/language",
         "battery",
         "battery#bat2",
         "clock",
         "tray"
     ],
     //#########################################################################
+    "hyprland/window": {
+        //"format": "{class}: ({title})",
+        "format": "<span style=\"italic\">{class}</span>: {title}",
+        "interval": 1,
+        "separate-outputs": true
+    },
     "hyprland/workspaces": {
-        "disable-scroll": true,
-        "on-click": "activate",
+        "active-only": false,
         "all-outputs": false,
         "format": "{name}: {icon}",
+        "on-click": "activate",
         "format-icons": {
             "1": "",
             "2": "",
             "3": "",
             "4": "",
             "5": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
-    "wlr/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "wlr/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": [
-            "",
-            ""
-        ],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+            "active": "",
+            "default": "",
+            "urgent": ""
+        },
+        "interval": 1,
+        "show-special": false,
+        "sort-by": "default"
     },
     //#########################################################################
     "backlight": {
@@ -233,17 +226,17 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 10
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
+    //"custom/media": {
+    //    "format": "{icon} {}",
+    //    "return-type": "json",
+    //    "max-length": 40,
+    //    "format-icons": {
+    //        "spotify": "",
+    //        "default": "🎜"
+    //    },
+    //    "escape": true,
+    //    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    //    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    //}
 }
