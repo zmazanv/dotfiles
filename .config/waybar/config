@@ -99,8 +99,8 @@
         // "timezone": "America/New_York",
         "interval": 1,
         "format": "{:%a, %e/%m/%Y; %H:%M:%S}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%A, %e de %B del %Y; %H:%M:%S}"
+        "format-alt": "{:%A, %e de %B del %Y; %H:%M:%S}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
         "format": "{usage}% ",
