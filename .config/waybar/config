@@ -202,14 +202,14 @@
   },
   "temperature": {
     "critical-threshold": 80,
-    "format": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
-    "format-critical": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
+    "format": "<span style=\"italic\">CPU:</span> <b>{temperatureC}°C</b> {icon}",
+    "format-critical": "<span style=\"italic\">CPU:</span> <b>{temperatureC}°C</b> {icon}",
     "format-icons": [
       "",
       "",
       ""
     ],
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
     "interval": 1,
     "tooltip": false
   },
