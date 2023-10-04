@@ -10,7 +10,9 @@
     "hyprland/workspaces"
     //"custom/media"
   ],
-  "modules-center": ["hyprland/window"],
+  "modules-center": [
+    "hyprland/window"
+  ],
   "modules-right": [
     "mpd",
     "idle_inhibitor",
@@ -53,11 +55,23 @@
   },
   //#########################################################################
   "backlight": {
+    "interval": 1,
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "battery": {
+    "interval": 1,
     "states": {
       // "good": 95,
       "warning": 30,
@@ -69,7 +83,13 @@
     "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "battery#bat2": {
     "bat": "BAT2"
@@ -172,7 +192,11 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol"
   },
@@ -180,7 +204,11 @@
     "critical-threshold": 80,
     "format": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
     "format-critical": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
-    "format-icons": ["", "", ""],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "interval": 1,
     "tooltip": false
