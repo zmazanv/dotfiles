@@ -33,7 +33,7 @@
     //#########################################################################
     "hyprland/window": {
         //"format": "{class}: ({title})",
-        "format": "<span style=\"italic\">{class}</span>: {title}",
+        "format": "<span style=\"italic\">{class}:</span> {title}",
         "interval": 1,
         "separate-outputs": true
     },
@@ -96,11 +96,28 @@
         "bat": "BAT2"
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "interval": 1,
+        "actions": {
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up"
+        },
+        "calendar": {
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc5d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>{:%W}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            },
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "weeks-pos": "left"
+        },
         "format": "{:%a, %e/%m/%Y; %H:%M:%S}",
         "format-alt": "{:%A, %e de %B del %Y; %H:%M:%S}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -186,8 +203,8 @@
     },
     "temperature#chipset": {
         "critical-threshold": 78,
-        "format": "Chipset: {temperatureC}°C {icon}",
-        "format-critical": "Chipset: {temperatureC}°C {icon}",
+        "format": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
             "",
             "",
@@ -199,8 +216,8 @@
     },
     "temperature#cpu": {
         "critical-threshold": 80,
-        "format": "CPU: {temperatureC}°C {icon}",
-        "format-critical": "CPU: {temperatureC}°C {icon}",
+        "format": "<span style=\"italic\">CPU:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
             "",
             "",
@@ -212,8 +229,8 @@
     },
     "temperature#t-sensor": {
         "critical-threshold": 45,
-        "format": "T-Sensor: {temperatureC}°C {icon}",
-        "format-critical": "T-Sensor: {temperatureC}°C {icon}",
+        "format": "<span style=\"italic\">T-Sensor:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">T-Sensor:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
             "",
             "",
