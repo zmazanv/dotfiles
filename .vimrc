@@ -36,6 +36,7 @@ let mapleader=" "
 call plug#begin('~/.vim/plugged')
 
 Plug 'dense-analysis/ale'
+Plug 'jiangmiao/auto-pairs'
 Plug 'vimwiki/vimwiki'
 Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline'
