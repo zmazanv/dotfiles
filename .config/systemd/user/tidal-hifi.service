@@ -3,7 +3,7 @@ Description=Tidal Hifi Service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/flatpak run com.mastermindzh.tidal-hifi
+ExecStart=/usr/bin/flatpak run com.mastermindzh.tidal-hifi --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations
 ExecStop=/usr/bin/flatpak kill com.mastermindzh.tidal-hifi
 Restart=on-failure
 
