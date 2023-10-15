@@ -49,6 +49,6 @@ vim.opt_local.shiftround = true
 vim.opt_local.shiftwidth = 4
 -------------------------------------------------------------------------------
 --#############################################################################
-vim.g.pyindent_open_paren = 4
-vim.g.pyindent_nested_paren = 4
-vim.g.pyindent_continue = 4
+--vim.g.pyindent_open_paren = 4
+--vim.g.pyindent_nested_paren = 4
+--vim.g.pyindent_continue = 4
