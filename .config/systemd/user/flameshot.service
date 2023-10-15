@@ -1,0 +1,11 @@
+[Unit]
+Description=Flameshot Service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/flatpak run org.flameshot.Flameshot
+ExecStop=/usr/bin/flatpak kill org.flameshot.Flameshot
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
