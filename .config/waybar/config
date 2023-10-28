@@ -210,7 +210,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
         "interval": 1,
         "tooltip": false
     },
@@ -223,7 +223,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp2_input",
         "interval": 1,
         "tooltip": false
     },
@@ -236,7 +236,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp4_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon7/temp9_input",
         "interval": 1,
         "tooltip": false
     },
