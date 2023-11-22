@@ -25,6 +25,6 @@ alias dotfiles-web='glab repo view --web zmazanv/dotfiles'
 #----------------------------------------------------------------------
 # Open Lazygit for the repo.
 #----------------------------------------------------------------------
-alias dotfiles-lg='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dlg='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 #----------------------------------------------------------------------
 ###############################################################################
