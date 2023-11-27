@@ -94,6 +94,8 @@
         "bat": "BAT2"
     },
     "clock": {
+        //"locale": "es_MX.UTF-8",
+        "locale": "es_ES.UTF-8",
         "actions": {
             "on-scroll-up": "shift_down",
             "on-scroll-down": "shift_up"
