@@ -3,7 +3,7 @@ Description=WhatsApp Desktop Service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/flatpak run io.github.mimbrero.WhatsAppDesktop --start-hidden
+ExecStart=/usr/bin/flatpak run io.github.mimbrero.WhatsAppDesktop --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --start-hidden
 ExecStop=/usr/bin/flatpak kill io.github.mimbrero.WhatsAppDesktop
 Restart=on-failure
 
