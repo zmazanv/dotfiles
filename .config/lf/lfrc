@@ -171,6 +171,13 @@ cmd zip ${{
     rm -rf $1
 }}
 
+cmd zi ${{
+	result="$(zoxide query -i | sed 's/\\/\\\\/g;s/"/\\"/g')"
+	lf -remote "send $id cd \"$result\""
+}}
+
+map zi zi
+
 set hidden true 
 set number true
 set relativenumber true
