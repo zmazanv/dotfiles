@@ -212,6 +212,12 @@ cmd zi ${{
 
 map zi zi
 
+cmd lazygit ${{
+    lazygit --path "$PWD" || lf -remote "send $id echo 'The current directory is not a git directory!'"
+}}
+
+map <space>lg lazygit
+
 set hidden true 
 set number true
 set relativenumber true
