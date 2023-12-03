@@ -230,7 +230,7 @@ set relativenumber true
 #-----------------------------------------------------
 # Previewer for file previews.
 #-----------------------------------------------------
-set previewer $HOME/.config/lf/scripts/previewer/scope
+#set previewer $HOME/.config/lf/scripts/previewer/scope
 #-----------------------------------------------------
 ###############################################################################
 
