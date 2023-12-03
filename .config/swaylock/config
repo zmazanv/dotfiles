@@ -1,4 +1,6 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# vim:foldmethod=marker:ft=bash
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # $HOME/.config/swaylock/config
 #
 # zmazanv (Sebastián Zavala Villagómez)
