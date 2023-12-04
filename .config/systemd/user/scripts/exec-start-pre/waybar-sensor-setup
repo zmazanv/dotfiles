@@ -117,7 +117,7 @@ function fn_setup {
 	fi
 }
 
-# Search for the sensor's HWMON input file and create a symlink to for Waybar to use.
+# Search for the sensor's HWMON input file and create a symlink to it for Waybar to use.
 function fn_create_sensor_symlink {
 	local sensor="${1}"
 	local sensor_symlink="${waybar_sensors_dir}/${sensor}"
