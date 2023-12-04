@@ -216,7 +216,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/home/sebas/.config/waybar/sensors/Chipset",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Chipset",
         "interval": 1,
         "tooltip": false
     },
@@ -229,7 +229,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/home/sebas/.config/waybar/sensors/CPU",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/CPU",
         "interval": 1,
         "tooltip": false
     },
@@ -242,7 +242,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/home/sebas/.config/waybar/sensors/Tctl",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tctl",
         "interval": 1,
         "tooltip": false
     },
@@ -255,7 +255,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/home/sebas/.config/waybar/sensors/Tccd1",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tccd1",
         "interval": 1,
         "tooltip": false
     },
@@ -268,7 +268,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/home/sebas/.config/waybar/sensors/Tccd2",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tccd2",
         "interval": 1,
         "tooltip": false
     },
@@ -281,7 +281,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/home/sebas/.config/waybar/sensors/T_Sensor",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/T_Sensor",
         "interval": 1,
         "tooltip": false
     },
