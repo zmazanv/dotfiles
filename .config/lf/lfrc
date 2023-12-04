@@ -216,7 +216,12 @@ cmd lazygit ${{
     lazygit --path "$PWD" || lf -remote "send $id echo 'The current directory is not a git directory!'"
 }}
 
+cmd dotfiles-lazygit ${{
+    lazygit --git-dir="$HOME/.dotfiles" --work-tree="$HOME"
+}}
+
 map <space>lg lazygit
+map <space>dlg dotfiles-lazygit
 
 set hidden true 
 set number true
