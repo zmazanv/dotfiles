@@ -22,7 +22,10 @@
         "cpu",
         "memory",
         "temperature#chipset",
-        "temperature#cpu",
+        "temperature#cpu-die",
+        "temperature#cpu-tctl",
+        "temperature#cpu-ccd1",
+        "temperature#cpu-ccd2",
         "temperature#t-sensor",
         "backlight",
         "keyboard-state",
@@ -213,20 +216,59 @@
             "",
             ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+        "hwmon-path": "/home/sebas/.config/waybar/sensors/Chipset",
         "interval": 1,
         "tooltip": false
     },
-    "temperature#cpu": {
+    "temperature#cpu-die": {
         "critical-threshold": 80,
-        "format": "<span style=\"italic\">CPU:</span> <b>{temperatureC}°C</b> {icon}",
-        "format-critical": "<span style=\"italic\">CPU:</span> <b>{temperatureC}°C</b> {icon}",
+        "format": "<span style=\"italic\">CPU Die:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU Die:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
             "",
             "",
             ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon5/temp2_input",
+        "hwmon-path": "/home/sebas/.config/waybar/sensors/CPU",
+        "interval": 1,
+        "tooltip": false
+    },
+    "temperature#cpu-tctl": {
+        "critical-threshold": 80,
+        "format": "<span style=\"italic\">CPU TCTL:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU TCTL:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "hwmon-path": "/home/sebas/.config/waybar/sensors/Tctl",
+        "interval": 1,
+        "tooltip": false
+    },
+    "temperature#cpu-ccd1": {
+        "critical-threshold": 80,
+        "format": "<span style=\"italic\">CPU CCD1:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU CCD1:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "hwmon-path": "/home/sebas/.config/waybar/sensors/Tccd1",
+        "interval": 1,
+        "tooltip": false
+    },
+    "temperature#cpu-ccd2": {
+        "critical-threshold": 80,
+        "format": "<span style=\"italic\">CPU CCD2:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU CCD2:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "hwmon-path": "/home/sebas/.config/waybar/sensors/Tccd2",
         "interval": 1,
         "tooltip": false
     },
@@ -239,7 +281,7 @@
             "",
             ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon5/temp4_input",
+        "hwmon-path": "/home/sebas/.config/waybar/sensors/T_Sensor",
         "interval": 1,
         "tooltip": false
     },
