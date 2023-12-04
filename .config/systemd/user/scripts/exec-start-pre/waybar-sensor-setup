@@ -1,0 +1,161 @@
+#!/usr/bin/env bash
+
+# This script is meant to run before starting systemd user service
+# waybar.service.
+# It is to search for HWMON input files that Waybar will use to
+# display the temperatures of the desired sensors.
+# This is because their locations do not have fixed paths and can dynamically
+# be different at each startup.
+# The sensors to be searched for have their labels listed in a file at
+# ${waybar_sensors_to_process_file}. They are case-sensitive.
+# The labels will be grepped for at ${hwmon_dir} and symlinks will be created
+# at ${waybar_sensors_dir}, which Waybar will follow to the real input files.
+
+# Signals that 'trap' will catch.
+sigs_to_trap=(
+	"SIGINT"
+	"SIGTERM"
+)
+
+# Parent directory of the sensor input files.
+hwmon_dir="/sys/class/hwmon"
+# Where the symlinks will be created.
+waybar_sensors_dir="${HOME}/.config/waybar/sensors"
+# List specifying which sensors to look for.
+waybar_sensors_to_process_file="${waybar_sensors_dir}/sensors-list"
+
+# Array that will be assigned the sensors found in the file.
+waybar_sensors_to_process=()
+
+# Sensors that could not be processed due to not finding 1 match exactly.
+skipped_sensors=()
+# Sensors that were handled successfully.
+processed_sensors=()
+
+# Log message to systemd user journal.
+function fn_log {
+	local level=${1,,}
+	local message="${2}"
+	logger --tag "waybar.service-prestart" --priority "user.${level}" "${message}"
+}
+
+# Log failure message and exit(1).
+function fn_failure_exit {
+	local message="${1}"
+	fn_log "err" "FAILURE: ${message} Exiting script..."
+	exit 1
+}
+
+# Log message when skipping the script and exit(0).
+function fn_skip_exit {
+	local message="${1}"
+	fn_log "warning" "SKIP: ${message} Skipping script..."
+	exit 0
+}
+
+# Log success message and exit(0).
+function fn_success_exit {
+	if [[ ${#skipped_sensors[@]} -eq 0 ]]; then
+		fn_log "info" "SUCCESS: Successfully ran prestart setup script. Created symlinks for HWMON sensors {${processed_sensors[*]}}. Exiting..."
+	else
+		fn_log "notice" "PARTIAL SUCCESS: Ran prestart setup script. Created symlinks for HWMON sensors {${processed_sensors[*]}}. Could not create symlink for HWMON sensors {${skipped_sensors[*]}}. Exiting..."
+	fi
+	exit 0
+}
+
+# Verify that the requirements and arguments exist. Exit accordingly.
+function fn_validate {
+	if [[ ! -d ${hwmon_dir} ]]; then
+		fn_failure_exit "The system hardware monitoring directory at ${hwmon_dir} does not exist."
+	fi
+
+	if [[ ! -d "${waybar_sensors_dir}" ]]; then
+		fn_skip_exit "Nothing to be done there is no HWMON sensors symlink directory for Waybar at ${waybar_sensors_dir}."
+	fi
+
+	if [[ ! -f "${waybar_sensors_to_process_file}" ]]; then
+		fn_skip_exit "Nothing to be done as there is no HWMON sensors list file for Waybar at ${waybar_sensors_to_process_file}."
+	fi
+}
+
+# Clean up Waybar sensor input symlinks. Skip if none found.
+function fn_cleanup {
+	if [[ ! -d "${waybar_sensors_dir}" ]]; then
+		fn_log "err" "CLEANUP: Cleanup failed as HWMON sensors symlink directory for Waybar at ${waybar_sensors_dir} does not exist."
+		return 1
+	fi
+
+	local has_symlinks="$(find "${waybar_sensors_dir}" -maxdepth 1 -type l)"
+
+	if [[ -z "${has_symlinks}" ]]; then
+		fn_log "info" "CLEANUP: No HWMON sensor symlinks to clean up in ${waybar_sensors_dir}."
+	else
+		for sensor_symlink in "${waybar_sensors_dir}"/*; do
+			[[ -L "${sensor_symlink}" ]] && rm --force "${sensor_symlink}" && fn_log "notice" "CLEANUP: Removed HWMON sensor symlink at ${sensor_symlink}."
+		done
+	fi
+}
+
+function fn_trap_exit {
+	local trapped_signal="${1}"
+	local message="Trapped ${trapped_signal} signal to stop script. Cleanup"
+
+	if fn_cleanup; then
+		fn_failure_exit "${message} successful."
+	else
+		fn_failure_exit "${message} failed."
+	fi
+}
+
+# Extract sensors to work with from ${waybar_sensors_to_process_file} containing them and validate.
+function fn_setup {
+	mapfile -t waybar_sensors_to_process <"${waybar_sensors_to_process_file}"
+
+	# Exit if the ${waybar_sensors_to_process_file} is empty.
+	if [[ ${#waybar_sensors_to_process[@]} -eq 0 ]]; then
+		fn_skip_exit "Nothing to be done as the HWMON sensors list file for Waybar at ${waybar_sensors_to_process_file} is empty."
+	fi
+}
+
+# Search for the sensor's HWMON input file and create a symlink to for Waybar to use.
+function fn_create_sensor_symlink {
+	local sensor="${1}"
+	local sensor_symlink="${waybar_sensors_dir}/${sensor}"
+	local sensor_search_results=()
+
+	# Search for input file matching passed sensor.
+	mapfile -t sensor_search_results < <(grep --files-with-matches --no-messages "^${sensor}$" ${hwmon_dir}/*/temp*label)
+
+	# Skip if there isn't exactly 1 match.
+	if [[ ${#sensor_search_results[@]} -ne 1 ]]; then
+		skipped_sensors+=("${sensor}")
+		fn_log "warning" "Found multiple matching HWMON sensor input files for ${sensor}. Skipping..."
+		return 1
+	fi
+
+	# Path to found HWMON sensor input file.
+	local hwmon_sensor_input="${sensor_search_results[0]//label/input}"
+
+	# Create symlink for it for Waybar to read.
+	if ! ln --force --symbolic "${hwmon_sensor_input}" "${sensor_symlink}"; then
+		fn_failure_exit "Failed to create symlink for HWMON sensor ${sensor} from ${hwmon_sensor_input} to ${sensor_symlink}. Exiting script..."
+	fi
+
+	processed_sensors+=("${sensor}")
+	fn_log "info" "Successfully created symlink for HWMON sensor ${sensor} from ${hwmon_sensor_input} to ${sensor_symlink}."
+}
+
+# Configure traps for cleanup specific to the signal caught.
+for sig in "${sigs_to_trap[@]}"; do
+	trap "fn_trap_exit ${sig}" "${sig}"
+done
+
+fn_validate
+fn_cleanup
+fn_setup
+
+for sensor in "${waybar_sensors_to_process[@]}"; do
+	fn_create_sensor_symlink "${sensor}"
+done
+
+fn_success_exit
