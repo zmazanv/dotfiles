@@ -3,7 +3,9 @@ Description=Waybar Service
 
 [Service]
 Type=simple
+ExecStartPre=%h/.config/systemd/user/scripts/exec-start-pre/waybar-sensor-setup
 ExecStart=/usr/bin/waybar
+ExecStopPost=%h/.config/systemd/user/scripts/exec-stop-post/waybar-sensor-cleanup
 Restart=on-failure
 
 [Install]
