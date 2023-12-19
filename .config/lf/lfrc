@@ -227,6 +227,12 @@ cmd dotfiles-lazygit ${{
     lazygit --git-dir="$HOME/.dotfiles" --work-tree="$HOME"
 }}
 
+cmd bota %{{
+    trash-put $fx
+}}
+
+map <space>x bota
+
 map <space>lg lazygit
 map <space>dlg dotfiles-lazygit
 
