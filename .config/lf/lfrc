@@ -210,7 +210,11 @@ cmd zi ${{
 	lf -remote "send $id cd \"$result\""
 }}
 
+cmd zz %{{
+        lf -remote "send $id cd $HOME"
+}}
 map zi zi
+map zz zz
 
 cmd lazygit ${{
     lazygit --path "$PWD" || lf -remote "send $id echo 'The current directory is not a git directory!'"
