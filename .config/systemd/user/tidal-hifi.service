@@ -2,7 +2,7 @@
 Description=Tidal Hifi Service
 
 [Service]
-Type=simple
+Type=exec
 ExecStart=/usr/bin/flatpak run com.mastermindzh.tidal-hifi
 ExecStop=/usr/bin/flatpak kill com.mastermindzh.tidal-hifi
 Restart=on-failure
