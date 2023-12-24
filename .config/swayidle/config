@@ -37,6 +37,6 @@ timeout 300 "systemctl --user start swaylock.service"
 #-----------------------------------------------------------------------------
 # Start Swaylock user systemd service before systemd puts the system to sleep.
 #-----------------------------------------------------------------------------
-before-sleep "systemctl --user start swalock.service"
+before-sleep "systemctl --user start swaylock.service"
 #-----------------------------------------------------------------------------
 ###############################################################################
