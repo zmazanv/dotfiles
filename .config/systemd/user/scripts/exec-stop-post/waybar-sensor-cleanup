@@ -8,8 +8,8 @@
 
 # Signals that 'trap' will catch.
 sigs_to_trap=(
-	"SIGINT"
-	"SIGTERM"
+    "SIGINT"
+    "SIGTERM"
 )
 
 # Where the created symlinks live.
@@ -18,75 +18,75 @@ waybar_hwmon_symlinks_dir="${waybar_hwmon_dir}/symlinks"
 
 # Log message to systemd user journal.
 function fn_log {
-	local level=${1,,}
-	local message="${2}"
-	logger --tag "waybar.service-poststop" --priority "user.${level}" "${message}"
+    local level=${1,,}
+    local message="${2}"
+    logger --tag "waybar.service-poststop" --priority "user.${level}" "${message}"
 }
 
 # Log failure message and exit(1).
 function fn_failure_exit {
-	local message="${1}"
-	fn_log "err" "FAILURE: ${message} Exiting script..."
-	exit 1
+    local message="${1}"
+    fn_log "err" "FAILURE: ${message} Exiting script..."
+    exit 1
 }
 
 # Log message when skipping the script and exit(0).
 function fn_skip_exit {
-	local message="${1}"
-	fn_log "warning" "SKIP: ${message} Skipping script..."
-	exit 0
+    local message="${1}"
+    fn_log "warning" "SKIP: ${message} Skipping script..."
+    exit 0
 }
 
 # Log success message and exit(0).
 function fn_success_exit {
-	fn_log "info" "SUCCESS: Successfully ran poststop cleanup script. Exiting..."
-	exit 0
+    fn_log "info" "SUCCESS: Successfully ran poststop cleanup script. Exiting..."
+    exit 0
 }
 
 # Verify that the Wayland sensors symlink directory exists. Exit if false.
 function fn_validate {
-	if [[ ! -d "${waybar_hwmon_symlinks_dir}" ]]; then
-		fn_skip_exit "Nothing to be done there is no HWMON sensors symlink directory for Waybar at ${waybar_hwmon_symlinks_dir}."
-	fi
+    if [[ ! -d "${waybar_hwmon_symlinks_dir}" ]]; then
+        fn_skip_exit "Nothing to be done there is no HWMON sensors symlink directory for Waybar at ${waybar_hwmon_symlinks_dir}."
+    fi
 }
 
 # Clean up Waybar sensor input symlinks if found.
 function fn_cleanup {
-	if [[ ! -d "${waybar_hwmon_symlinks_dir}" ]]; then
-		fn_log "notice" "CLEANUP: Nothing to clean up as HWMON sensors symlink directory for Waybar at ${waybar_hwmon_symlinks_dir} does not exist."
-		return
-	fi
+    if [[ ! -d "${waybar_hwmon_symlinks_dir}" ]]; then
+        fn_log "notice" "CLEANUP: Nothing to clean up as HWMON sensors symlink directory for Waybar at ${waybar_hwmon_symlinks_dir} does not exist."
+        return
+    fi
 
-	local hwmon_symlinks_to_clean=()
+    local hwmon_symlinks_to_clean=()
 
-	mapfile -t hwmon_symlinks_to_clean < <(find "${waybar_hwmon_symlinks_dir}" -maxdepth 1 -type l)
+    mapfile -t hwmon_symlinks_to_clean < <(find "${waybar_hwmon_symlinks_dir}" -maxdepth 1 -type l)
 
-	if [[ ${#hwmon_symlinks_to_clean[@]} -eq 0 ]]; then
-		fn_log "info" "CLEANUP: No HWMON sensor symlinks to clean up in ${waybar_hwmon_symlinks_dir}."
-	else
-		for hwmon_sensor_symlink in "${hwmon_symlinks_to_clean[@]}"; do
-			if [[ -L "${hwmon_sensor_symlink}" ]]; then
-				rm --force "${hwmon_sensor_symlink}"
-				fn_log "notice" "CLEANUP: Removed HWMON sensor symlink at ${hwmon_sensor_symlink}."
-			fi
-		done
-	fi
+    if [[ ${#hwmon_symlinks_to_clean[@]} -eq 0 ]]; then
+        fn_log "info" "CLEANUP: No HWMON sensor symlinks to clean up in ${waybar_hwmon_symlinks_dir}."
+    else
+        for hwmon_sensor_symlink in "${hwmon_symlinks_to_clean[@]}"; do
+            if [[ -L "${hwmon_sensor_symlink}" ]]; then
+                rm --force "${hwmon_sensor_symlink}"
+                fn_log "notice" "CLEANUP: Removed HWMON sensor symlink at ${hwmon_sensor_symlink}."
+            fi
+        done
+    fi
 }
 
 function fn_trap_exit {
-	local trapped_signal="${1}"
-	local message="Caught ${trapped_signal} signal to stop script. Cleanup pass"
+    local trapped_signal="${1}"
+    local message="Caught ${trapped_signal} signal to stop script. Cleanup pass"
 
-	if fn_cleanup; then
-		fn_failure_exit "${message} successful."
-	else
-		fn_failure_exit "${message} failed."
-	fi
+    if fn_cleanup; then
+        fn_failure_exit "${message} successful."
+    else
+        fn_failure_exit "${message} failed."
+    fi
 }
 
 # Configure traps for cleanup specific to the signal caught.
 for sig in "${sigs_to_trap[@]}"; do
-	trap "fn_trap_exit ${sig}" "${sig}"
+    trap "fn_trap_exit ${sig}" "${sig}"
 done
 
 fn_validate
