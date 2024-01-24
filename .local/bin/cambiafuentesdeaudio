@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env -S bash -u
 
 if [ "$(pactl info | grep 'Default Sink' | awk '{print $3}')" == 'alsa_output.usb-Schiit_Audio_Schiit_Unison_Modius-00.analog-stereo' ]; then
     pactl set-default-sink alsa_output.pci-0000_0c_00.4.analog-stereo
