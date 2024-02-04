@@ -1,6 +1,7 @@
 #!/usr/bin/env -S bash -u
 
 __AUDIO_SINK="$(pactl info | grep 'Default Sink' | cut -d ' ' -f 3)"
+[[ -z "${__AUDIO_SINK}" ]] && exit 1
 
 declare -A __SCHIIT_MODIUS
 __SCHIIT_MODIUS['name']='alsa_output.usb-Schiit_Audio_Schiit_Unison_Modius-00.analog-stereo'
