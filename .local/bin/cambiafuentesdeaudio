@@ -1,11 +1,28 @@
 #!/usr/bin/env -S bash -u
 
-if [ "$(pactl info | grep 'Default Sink' | awk '{print $3}')" == 'alsa_output.usb-Schiit_Audio_Schiit_Unison_Modius-00.analog-stereo' ]; then
-    pactl set-default-sink alsa_output.pci-0000_0c_00.4.analog-stereo
-    notify-send "🔊 Fuente de Audio" "Se ha cambiado la fuente de audio a 'Logitech Z10'." -t 2000
-elif [ "$(pactl info | grep 'Default Sink' | awk '{print $3}')" == 'alsa_output.pci-0000_0c_00.4.analog-stereo' ]; then
-    pactl set-default-sink alsa_output.usb-Schiit_Audio_Schiit_Unison_Modius-00.analog-stereo
-    notify-send "🔊 Fuente de Audio" "Se ha cambiado la fuente de audio a 'Schiit Modius'." -t 2000
-else
-    notify-send "🔊 Fuente de Audio" "No se pudo cambiar la fuente de audio." -t 2000
-fi
+__AUDIO_SINK="$(pactl info | grep 'Default Sink' | cut -d ' ' -f 3)"
+
+declare -A __SCHIIT_MODIUS
+__SCHIIT_MODIUS['name']='alsa_output.usb-Schiit_Audio_Schiit_Unison_Modius-00.analog-stereo'
+__SCHIIT_MODIUS['nick']='Schiit Modius'
+
+declare -A __MOTHERBOARD_OUT
+__MOTHERBOARD_OUT['name']='alsa_output.pci-0000_0c_00.4.analog-stereo'
+__MOTHERBOARD_OUT['nick']='Logitech Z10'
+
+case "${__AUDIO_SINK}" in
+    "${__SCHIIT_MODIUS['name']}")
+        pactl set-default-sink "${__MOTHERBOARD_OUT['name']}"
+        dunstify -u normal -r 100 -t 2000 "🔊 Fuente de Audio" "Se ha cambiado la fuente de audio a '${__MOTHERBOARD_OUT['nick']}'."
+        exit 0
+        ;;
+    "${__MOTHERBOARD_OUT['name']}")
+        pactl set-default-sink "${__SCHIIT_MODIUS['name']}"
+        dunstify -u normal -r 100 -t 2000 "🔊 Fuente de Audio" "Se ha cambiado la fuente de audio a '${__SCHIIT_MODIUS['nick']}'."
+        exit 0
+        ;;
+    *)
+        dunstify -u critical -r 100 "🔊 Fuente de Audio" "No se pudo cambiar la fuente de audio. No se encontraron las siguientes entradas:\n- ${__SCHIIT_MODIUS['name']}\n- ${__MOTHERBOARD_OUT['name']}"
+        exit 1
+        ;;
+esac
