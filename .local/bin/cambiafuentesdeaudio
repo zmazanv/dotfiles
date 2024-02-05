@@ -23,7 +23,7 @@ case "${__AUDIO_SINK}" in
         exit 0
         ;;
     *)
-        dunstify -u critical -r 100 "🔊 Fuente de Audio" "No se pudo cambiar la fuente de audio. No se encontraron las siguientes entradas:\n- ${__SCHIIT_MODIUS['name']}\n- ${__MOTHERBOARD_OUT['name']}"
+        dunstify -u critical -r 100 "🔊 Fuente de Audio" "No se pudo cambiar la fuente de audio.\n\nSalida actual:\n- ${__AUDIO_SINK}\n\nNo se encontraron las siguientes salidas:\n- ${__SCHIIT_MODIUS['name']}\n- ${__MOTHERBOARD_OUT['name']}"
         exit 1
         ;;
 esac
