@@ -212,9 +212,9 @@
         "format": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
         "format-critical": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
         "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Chipset",
         "interval": 1,
@@ -225,9 +225,9 @@
         "format": "<span style=\"italic\">CPU Die:</span> <b>{temperatureC}°C</b> {icon}",
         "format-critical": "<span style=\"italic\">CPU Die:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
         "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/CPU",
         "interval": 1,
@@ -238,9 +238,9 @@
         "format": "<span style=\"italic\">CPU TCTL:</span> <b>{temperatureC}°C</b> {icon}",
         "format-critical": "<span style=\"italic\">CPU TCTL:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
         "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tctl",
         "interval": 1,
@@ -251,9 +251,9 @@
         "format": "<span style=\"italic\">CPU CCD1:</span> <b>{temperatureC}°C</b> {icon}",
         "format-critical": "<span style=\"italic\">CPU CCD1:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
         "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tccd1",
         "interval": 1,
@@ -264,9 +264,9 @@
         "format": "<span style=\"italic\">CPU CCD2:</span> <b>{temperatureC}°C</b> {icon}",
         "format-critical": "<span style=\"italic\">CPU CCD2:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
         "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tccd2",
         "interval": 1,
@@ -277,9 +277,9 @@
         "format": "<span style=\"italic\">T-Sensor:</span> <b>{temperatureC}°C</b> {icon}",
         "format-critical": "<span style=\"italic\">T-Sensor:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
         "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/T_Sensor",
         "interval": 1,
