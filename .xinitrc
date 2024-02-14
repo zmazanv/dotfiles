@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ "${0}" != "/usr/bin/startx" ] && exit 1
+[ "$(realpath "${0}")" != "/usr/bin/startx" ] && exit 1
 
 __USERRESOURCES=$HOME/.Xresources
 __USERMODMAP=$HOME/.Xmodmap
