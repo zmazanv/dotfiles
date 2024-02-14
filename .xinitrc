@@ -1,7 +1,5 @@
 #!/bin/sh
 
-[ "$(realpath "${0}")" != "/usr/bin/startx" ] && exit 1
-
 __USERRESOURCES=$HOME/.Xresources
 __USERMODMAP=$HOME/.Xmodmap
 __SYSRESOURCES=/etc/X11/xinit/.Xresources
