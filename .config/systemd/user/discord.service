@@ -2,9 +2,9 @@
 Description=Discord Service
 
 [Service]
-Type=simple
+Type=exec
 ExecStart=/usr/bin/flatpak run com.discordapp.Discord --start-minimized 
-ExecStop=/usr/bin/flatpak run com.discordapp.Discord
+ExecStop=/usr/bin/flatpak kill com.discordapp.Discord
 Restart=on-failure
 
 [Install]

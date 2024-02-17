@@ -2,7 +2,7 @@
 Description=Solaar Service
 
 [Service]
-Type=simple
+Type=exec
 ExecStart=/usr/bin/solaar --window=hide
 Restart=on-failure
 

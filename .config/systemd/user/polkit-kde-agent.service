@@ -2,7 +2,7 @@
 Description=Polkit-KDE-Agent Service
 
 [Service]
-Type=simple
+Type=exec
 ExecStart=/usr/lib/polkit-kde-authentication-agent-1
 Restart=on-failure
 

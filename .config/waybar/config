@@ -1,3 +1,4 @@
+// vim:foldmethod=marker:ft=jsonc
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
@@ -14,14 +15,17 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "mpd",
+        //"mpd",
         "idle_inhibitor",
         "pulseaudio",
         "network",
         "cpu",
         "memory",
         "temperature#chipset",
-        "temperature#cpu",
+        "temperature#cpu-die",
+        "temperature#cpu-tctl",
+        "temperature#cpu-ccd1",
+        "temperature#cpu-ccd2",
         "temperature#t-sensor",
         "backlight",
         "keyboard-state",
@@ -96,6 +100,8 @@
         "bat": "BAT2"
     },
     "clock": {
+        //"locale": "es_MX.UTF-8",
+        "locale": "es_ES.UTF-8",
         "actions": {
             "on-scroll-up": "shift_down",
             "on-scroll-down": "shift_up"
@@ -206,24 +212,63 @@
         "format": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
         "format-critical": "<span style=\"italic\">Chipset:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Chipset",
         "interval": 1,
         "tooltip": false
     },
-    "temperature#cpu": {
+    "temperature#cpu-die": {
         "critical-threshold": 80,
-        "format": "<span style=\"italic\">CPU:</span> <b>{temperatureC}°C</b> {icon}",
-        "format-critical": "<span style=\"italic\">CPU:</span> <b>{temperatureC}°C</b> {icon}",
+        "format": "<span style=\"italic\">CPU Die:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU Die:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/CPU",
+        "interval": 1,
+        "tooltip": false
+    },
+    "temperature#cpu-tctl": {
+        "critical-threshold": 80,
+        "format": "<span style=\"italic\">CPU TCTL:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU TCTL:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tctl",
+        "interval": 1,
+        "tooltip": false
+    },
+    "temperature#cpu-ccd1": {
+        "critical-threshold": 80,
+        "format": "<span style=\"italic\">CPU CCD1:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU CCD1:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tccd1",
+        "interval": 1,
+        "tooltip": false
+    },
+    "temperature#cpu-ccd2": {
+        "critical-threshold": 80,
+        "format": "<span style=\"italic\">CPU CCD2:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-critical": "<span style=\"italic\">CPU CCD2:</span> <b>{temperatureC}°C</b> {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/Tccd2",
         "interval": 1,
         "tooltip": false
     },
@@ -232,11 +277,11 @@
         "format": "<span style=\"italic\">T-Sensor:</span> <b>{temperatureC}°C</b> {icon}",
         "format-critical": "<span style=\"italic\">T-Sensor:</span> <b>{temperatureC}°C</b> {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
-        "hwmon-path": "/sys/class/hwmon/hwmon3/temp4_input",
+        "hwmon-path": "/home/sebas/.config/waybar/hwmon/symlinks/T_Sensor",
         "interval": 1,
         "tooltip": false
     },
