@@ -1,0 +1,5 @@
+[Context]
+filesystems=/mnt/Juegos/Linux/Steam:rw;xdg-config/MangoHud:ro
+
+[Environment]
+MANGOHUD=1

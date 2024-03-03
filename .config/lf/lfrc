@@ -82,35 +82,35 @@ cmd open &{{
     esac
 }}
 
-cmd dotfiles-stage-file &{{
+cmd dotfiles-stage-file %{{
     if git --git-dir=$HOME/.dotfiles --work-tree=$HOME add "$f"; then
         lf -remote "send $id echo 'Highlighted file staged in dotfiles!'"
     else
         lf -remote "send $id echo 'Failed to stage highlighted file in dotfiles!'"
     fi
 }}
-cmd dotfiles-stage-pwd-tracked &{{
+cmd dotfiles-stage-pwd-tracked %{{
     if git --git-dir=$HOME/.dotfiles --work-tree=$HOME add --update "$PWD"; then
         lf -remote "send $id echo 'PWD staged in dotfiles!'"
     else
         lf -remote "send $id echo 'Failed to stage PWD in dotfiles!'"
     fi
 }}
-cmd dotfiles-restore-file &{{
+cmd dotfiles-restore-file %{{
     if git --git-dir=$HOME/.dotfiles --work-tree=$HOME restore "$f"; then
         lf -remote "send $id echo 'Highlighted file restored in dotfiles!'"
     else
         lf -remote "send $id echo 'Failed to restore highlighted file in dotfiles!'"
     fi
 }}
-cmd dotfiles-restore-pwd &{{
+cmd dotfiles-restore-pwd %{{
     if git --git-dir=$HOME/.dotfiles --work-tree=$HOME restore "$PWD"; then
         lf -remote "send $id echo 'PWD restored in dotfiles!'"
     else
         lf -remote "send $id echo 'Failed to restore PWD in dotfiles!'"
     fi
 }}
-cmd dotfiles-unstage-file &{{
+cmd dotfiles-unstage-file %{{
     if git --git-dir=$HOME/.dotfiles --work-tree=$HOME reset "$f"; then
         clear
         lf -remote "send $id echo 'Highlighted file unstaged in dotfiles!'"
@@ -118,7 +118,7 @@ cmd dotfiles-unstage-file &{{
         lf -remote "send $id echo 'Failed to unstaged highlighted file in dotfiles!'"
     fi
 }}
-cmd dotfiles-unstage-pwd &{{
+cmd dotfiles-unstage-pwd %{{
     if git --git-dir=$HOME/.dotfiles --work-tree=$HOME reset "$PWD"; then
         clear
         lf -remote "send $id echo 'PWD unstaged in dotfiles!'"
@@ -147,7 +147,9 @@ map v toggle
 map V invert
 
 # mkdir command. See wiki if you want it to select created dir
-map a :push %mkdir<space>
+map A :push %mkdir<space>
+
+map a :push %touch<space>
 
 # define a custom 'rename' command without prompt for overwrite
 # cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
@@ -210,7 +212,12 @@ cmd zi ${{
 	lf -remote "send $id cd \"$result\""
 }}
 
+cmd zz %{{
+        lf -remote "send $id cd $HOME"
+}}
+
 map zi zi
+map zz zz
 
 cmd lazygit ${{
     lazygit --path "$PWD" || lf -remote "send $id echo 'The current directory is not a git directory!'"
@@ -219,6 +226,12 @@ cmd lazygit ${{
 cmd dotfiles-lazygit ${{
     lazygit --git-dir="$HOME/.dotfiles" --work-tree="$HOME"
 }}
+
+cmd bota %{{
+    trash-put $fx
+}}
+
+map <space>x bota
 
 map <space>lg lazygit
 map <space>dlg dotfiles-lazygit
