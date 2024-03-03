@@ -1,0 +1,53 @@
+{
+	"adBlock": false,
+	"api": true,
+	"apiSettings": {
+		"port": 47836
+	},
+	"customCSS": [],
+	"disableBackgroundThrottle": true,
+	"disableHardwareMediaKeys": false,
+	"enableCustomHotkeys": false,
+	"enableDiscord": true,
+	"discord": {
+		"detailsPrefix": "Listening to ",
+		"buttonText": "Play on Tidal",
+		"includeTimestamps": true,
+		"showSong": "true",
+		"idleText": "Browsing Tidal",
+		"usingText": "Playing media on TIDAL"
+	},
+	"ListenBrainz": {
+		"enabled": false,
+		"api": "https://api.listenbrainz.org",
+		"token": "",
+		"delay": 5000
+	},
+	"flags": {
+		"disableHardwareMediaKeys": false,
+		"enableWaylandSupport": true,
+		"gpuRasterization": true
+	},
+	"menuBar": false,
+	"minimizeOnClose": true,
+	"mpris": true,
+	"notifications": true,
+	"playBackControl": true,
+	"singleInstance": true,
+	"skipArtists": false,
+	"skippedArtists": [
+		""
+	],
+	"theme": "none",
+	"trayIcon": true,
+	"updateFrequency": 500,
+	"windowBounds": {
+		"width": 2516,
+		"height": 1366
+	},
+	"__internal__": {
+		"migrations": {
+			"version": "5.9.0"
+		}
+	}
+}
