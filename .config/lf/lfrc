@@ -220,7 +220,11 @@ map zi zi
 map zz zz
 
 cmd lazygit ${{
-    lazygit --path "$PWD" || lf -remote "send $id echo 'The current directory is not a git directory!'"
+    if git rev-parse --is-inside-work-tree; then
+        lazygit --path "$(git rev-parse --show-toplevel)"
+    else
+        lf -remote "send $id echo 'The current directory is not in a git work tree!'"
+    fi
 }}
 
 cmd dotfiles-lazygit ${{
