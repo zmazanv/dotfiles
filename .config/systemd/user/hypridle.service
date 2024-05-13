@@ -1,0 +1,10 @@
+[Unit]
+Description=Hypridle Service
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/hypridle
+Restart=on-failure
+
+[Install]
+WantedBy=autostart.target
