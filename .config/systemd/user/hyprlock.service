@@ -1,0 +1,7 @@
+[Unit]
+Description=Hyprlock Service
+
+[Service]
+Type=exec
+ExecStartPre=-/usr/bin/playerctl --all-players pause
+ExecStart=/usr/bin/hyprlock
