@@ -1,0 +1,78 @@
+#!/usr/bin/env -S bash -u
+
+command -v notify-send >/dev/null 2>&1 || exit 1
+command -v pactl >/dev/null 2>&1 || exit 1
+
+declare __AUDIO_SINK
+declare -A __DAC
+declare -A __SPEAKERS
+declare -A __NOTIFY
+
+__AUDIO_SINK="$(pactl get-default-sink)"
+[[ -z "${__AUDIO_SINK}" ]] && exit 1
+
+__SPEAKERS['name']='alsa_output.pci-0000_0c_00.4.analog-stereo'
+__SPEAKERS['nick']='Logitech Z10'
+
+__DAC['name']='alsa_output.usb-Schiit_Audio_Schiit_Unison_Modius-00.analog-stereo'
+__DAC['nick']='Schiit Modius'
+
+__NOTIFY['expire_time']=2000
+__NOTIFY['id']=100
+
+__NOTIFY['summary']='🔊 Audio'
+__NOTIFY['body']='Audio sink changed to'
+__NOTIFY['err_body']='Unable to switch audio sink.'
+
+__NOTIFY['es_body']='Salida de audio cambiada a'
+__NOTIFY['es_err_body']='No se pudo cambiar la salida de audio.'
+
+function _switch_sink() {
+    local __body="${__NOTIFY['body']}"
+
+    [[ "${LANG:-}" =~ ^es.*$ ]] && __body="${__NOTIFY['es_body']}"
+
+    pactl set-default-sink "${1}"
+
+    notify-send \
+        --replace-id "${__NOTIFY['id']}" \
+        --expire-time "${__NOTIFY['expire_time']}" \
+        --urgency 'normal' \
+        "${__NOTIFY['summary']}" \
+        "${__body} '${2}'."
+
+    return 0
+}
+
+function _notify_failed() {
+    local __err_body="${__NOTIFY['err_body']}"
+
+    [[ "${LANG:-}" =~ ^es.*$ ]] && __err_body="${__NOTIFY['es_err_body']}"
+
+    notify-send \
+        --replace-id "${__NOTIFY['id']}" \
+        --urgency 'critical' \
+        "${__NOTIFY['summary']}" \
+        "${__err_body}"
+
+    return 1
+
+}
+
+case "${__AUDIO_SINK}" in
+    "${__SPEAKERS['name']}")
+        _switch_sink \
+            "${__DAC['name']}" \
+            "${__DAC['nick']}"
+        ;;
+    "${__DAC['name']}")
+        _switch_sink \
+            "${__SPEAKERS['name']}" \
+            "${__SPEAKERS['nick']}"
+        ;;
+    *)
+        _notify_failed
+        ;;
+esac
+
+exit $?
