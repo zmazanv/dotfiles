@@ -21,8 +21,8 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Source argument if it is a regular file; ignore if not.
-function check_source {
-	[[ -f "$1" ]] && source "$1"
+function _source_if {
+	[[ -f "${1}" ]] && source "${1}"
 }
 
 ###############################################################################
@@ -30,8 +30,8 @@ function check_source {
 # █▀█ █▀█ ▀█▀ █ █▀█ █▄░█ █▀
 # █▄█ █▀▀ ░█░ █ █▄█ █░▀█ ▄█
 ###############################################################################
-check_source "$HOME"/.zsh.d/rc.d/options/settings.zsh
-check_source "$HOME"/.zsh.d/rc.d/options/completion.zsh
+_source_if "${HOME}"/.zsh.d/rc.d/options/settings.zsh
+_source_if "${HOME}"/.zsh.d/rc.d/options/completion.zsh
 ###############################################################################
 
 ###############################################################################
@@ -39,7 +39,7 @@ check_source "$HOME"/.zsh.d/rc.d/options/completion.zsh
 # █▀▀ █░█ █▄░█ █▀▀ ▀█▀ █ █▀█ █▄░█ █▀
 # █▀░ █▄█ █░▀█ █▄▄ ░█░ █ █▄█ █░▀█ ▄█
 ###############################################################################
-check_source "$HOME"/.zsh.d/rc.d/functions/functions.zsh
+_source_if "${HOME}"/.zsh.d/rc.d/functions/functions.zsh
 ###############################################################################
 
 ###############################################################################
@@ -50,19 +50,19 @@ check_source "$HOME"/.zsh.d/rc.d/functions/functions.zsh
 #--------------------------------------------------------------------------------------
 # Fish-like syntax highlighting.
 #--------------------------------------------------------------------------------------
-check_source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+_source_if /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #--------------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------------------------
 # Fish-like history substring search.
 #------------------------------------------------------------------------------------------------
-check_source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+_source_if /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 #------------------------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------
 # Fish-like autosuggestions.
 #------------------------------------------------------------------------------
-check_source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+_source_if /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #------------------------------------------------------------------------------
 ###############################################################################
 
@@ -71,22 +71,9 @@ check_source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ▄▀█ █░░ █ ▄▀█ █▀ █▀▀ █▀
 # █▀█ █▄▄ █ █▀█ ▄█ ██▄ ▄█
 ###############################################################################
-check_source "$HOME"/.zsh.d/rc.d/alias/applications.zsh
-check_source "$HOME"/.zsh.d/rc.d/alias/git.zsh
-check_source "$HOME"/.zsh.d/rc.d/alias/miscellaneous.zsh
-###############################################################################
-
-###############################################################################
-# INTEGRATIONS
-# █ █▄░█ ▀█▀ █▀▀ █▀▀ █▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀
-# █ █░▀█ ░█░ ██▄ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█
-###############################################################################
-#-----------------------------------------------------------------
-# FZF.
-#-----------------------------------------------------------------
-check_source "$HOME"/.zsh.d/rc.d/integrations/fzf/completion.zsh
-check_source "$HOME"/.zsh.d/rc.d/integrations/fzf/key-bindings.zsh
-#-----------------------------------------------------------------
+_source_if "${HOME}"/.zsh.d/rc.d/alias/applications.zsh
+_source_if "${HOME}"/.zsh.d/rc.d/alias/git.zsh
+_source_if "${HOME}"/.zsh.d/rc.d/alias/miscellaneous.zsh
 ###############################################################################
 
 ###############################################################################
@@ -94,7 +81,7 @@ check_source "$HOME"/.zsh.d/rc.d/integrations/fzf/key-bindings.zsh
 # █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █▀
 # █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ ▄█
 ###############################################################################
-check_source "$HOME"/.zsh.d/rc.d/keybinds/keybinds.zsh
+_source_if "${HOME}"/.zsh.d/rc.d/keybinds/keybinds.zsh
 ###############################################################################
 
 ###############################################################################
@@ -102,9 +89,9 @@ check_source "$HOME"/.zsh.d/rc.d/keybinds/keybinds.zsh
 # █▀ ▀█▀ ▄▀█ █▀█ ▀█▀ █░█ █▀█
 # ▄█ ░█░ █▀█ █▀▄ ░█░ █▄█ █▀▀
 ###############################################################################
-check_source "$HOME"/.zsh.d/rc.d/startup/applications.zsh
-check_source "$HOME"/.zsh.d/rc.d/startup/prompt.zsh
+_source_if "${HOME}"/.zsh.d/rc.d/startup/applications.zsh
+_source_if "${HOME}"/.zsh.d/rc.d/startup/prompt.zsh
 ###############################################################################
 
 # Unset function so it doesn't make it into the interactive session.
-unset -f check_source
+unset -f _source_if

@@ -21,8 +21,8 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Source argument if it is a regular file; ignore if not.
-function check_source {
-	[[ -f "$1" ]] && source "$1"
+function _source_if {
+	[[ -f "${1}" ]] && source "${1}"
 }
 
 ###############################################################################
@@ -30,7 +30,7 @@ function check_source {
 # █▀▀ █░█ █▄░█ █▀▀ ▀█▀ █ █▀█ █▄░█ █▀
 # █▀░ █▄█ █░▀█ █▄▄ ░█░ █ █▄█ █░▀█ ▄█
 ###############################################################################
-check_source "$HOME"/.bash.d/rc.d/functions/functions.sh
+_source_if "${HOME}"/.bash.d/rc.d/functions/functions.sh
 ###############################################################################
 
 ###############################################################################
@@ -38,9 +38,9 @@ check_source "$HOME"/.bash.d/rc.d/functions/functions.sh
 # ▄▀█ █░░ █ ▄▀█ █▀ █▀▀ █▀
 # █▀█ █▄▄ █ █▀█ ▄█ ██▄ ▄█
 ###############################################################################
-check_source "$HOME"/.bash.d/rc.d/alias/applications.sh
-check_source "$HOME"/.bash.d/rc.d/alias/git.sh
-check_source "$HOME"/.bash.d/rc.d/alias/miscellaneous.sh
+_source_if "${HOME}"/.bash.d/rc.d/alias/applications.sh
+_source_if "${HOME}"/.bash.d/rc.d/alias/git.sh
+_source_if "${HOME}"/.bash.d/rc.d/alias/miscellaneous.sh
 ###############################################################################
 
 ###############################################################################
@@ -48,20 +48,7 @@ check_source "$HOME"/.bash.d/rc.d/alias/miscellaneous.sh
 # █▀█ █▀█ ▀█▀ █ █▀█ █▄░█ █▀
 # █▄█ █▀▀ ░█░ █ █▄█ █░▀█ ▄█
 ###############################################################################
-check_source "$HOME"/.bash.d/rc.d/options/settings.sh
-###############################################################################
-
-###############################################################################
-# INTEGRATIONS
-# █ █▄░█ ▀█▀ █▀▀ █▀▀ █▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀
-# █ █░▀█ ░█░ ██▄ █▄█ █▀▄ █▀█ ░█░ █ █▄█ █░▀█ ▄█
-###############################################################################
-#-------------------------------------------------------------------
-# FZF.
-#-------------------------------------------------------------------
-check_source "$HOME"/.bash.d/rc.d/integrations/fzf/completion.bash
-check_source "$HOME"/.bash.d/rc.d/integrations/fzf/key-bindings.bash
-#-------------------------------------------------------------------
+_source_if "${HOME}"/.bash.d/rc.d/options/settings.sh
 ###############################################################################
 
 ###############################################################################
@@ -69,9 +56,9 @@ check_source "$HOME"/.bash.d/rc.d/integrations/fzf/key-bindings.bash
 # █▀ ▀█▀ ▄▀█ █▀█ ▀█▀ █░█ █▀█
 # ▄█ ░█░ █▀█ █▀▄ ░█░ █▄█ █▀▀
 ###############################################################################
-check_source "$HOME"/.bash.d/rc.d/startup/applications.sh
-check_source "$HOME"/.bash.d/rc.d/startup/prompt.sh
+_source_if "${HOME}"/.bash.d/rc.d/startup/applications.sh
+_source_if "${HOME}"/.bash.d/rc.d/startup/prompt.sh
 ###############################################################################
 
 # Unset function so it doesn't make it into the interactive session.
-unset -f check_source
+unset -f _source_if
