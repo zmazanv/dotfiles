@@ -5,3 +5,4 @@ Description=Hyprlock Service
 Type=exec
 ExecStartPre=-/usr/bin/playerctl --all-players pause
 ExecStart=/usr/bin/hyprlock
+ExecStop=-/usr/bin/kill --signal SIGUSR1 $MAINPID
