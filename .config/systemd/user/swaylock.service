@@ -1,7 +1,0 @@
-[Unit]
-Description=Swaylock Service
-
-[Service]
-Type=exec
-ExecStartPre=-/usr/bin/playerctl --all-players pause
-ExecStart=/usr/bin/swaylock --config %h/.config/swaylock/config
