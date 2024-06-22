@@ -24,4 +24,4 @@ _source_if "/usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-subs
 _source_if "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 #: }}}
 
-unset -f _source_if
+unset _source_if
