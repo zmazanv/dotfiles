@@ -1,8 +1,8 @@
-[style.description]
-foreground = "magenta"
-underline = false
-bold = false
-italic = false
+[directories]
+
+[display]
+compact = false
+use_pager = false
 
 [style.command_name]
 foreground = "green"
@@ -10,8 +10,8 @@ underline = false
 bold = false
 italic = false
 
-[style.example_text]
-foreground = "cyan"
+[style.description]
+foreground = "magenta"
 underline = false
 bold = false
 italic = false
@@ -22,18 +22,18 @@ underline = false
 bold = false
 italic = false
 
+[style.example_text]
+foreground = "cyan"
+underline = false
+bold = false
+italic = false
+
 [style.example_variable]
 foreground = "red"
 underline = false
 bold = false
 italic = true
 
-[display]
-compact = false
-use_pager = false
-
 [updates]
 auto_update = false
 auto_update_interval_hours = 720
-
-[directories]

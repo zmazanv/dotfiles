@@ -2,7 +2,8 @@
 	"adBlock": false,
 	"api": true,
 	"apiSettings": {
-		"port": 47836
+		"port": 47836,
+		"hostname": "127.0.0.1"
 	},
 	"customCSS": [],
 	"disableBackgroundThrottle": true,
@@ -47,7 +48,7 @@
 	},
 	"__internal__": {
 		"migrations": {
-			"version": "5.13.1"
+			"version": "5.14.1"
 		}
 	}
 }
